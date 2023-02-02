@@ -1,0 +1,7 @@
+{
+  "name": "pf2reference",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
