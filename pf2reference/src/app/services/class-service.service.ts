@@ -11,6 +11,6 @@ export class ClassServiceService {
   constructor( private supaService: SupabaseService) { }
 
   public async getAllClasses(): Promise<PostgrestResponse<Character_classes>> {
-    return this.supaService.supabaseClient.from('character_classes').select('*');
+    return this.supaService.supabaseClient.from('character_classes').select('*').order('id');
   }
 }
