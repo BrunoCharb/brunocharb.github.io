@@ -14,7 +14,6 @@ export class ClassesPage implements OnInit {
   constructor( private classService: ClassServiceService) { }
   async ionViewWillEnter() {
     await this.getAllClasses();
-    console.log(this.classList);
   }
   async ngOnInit() {
 

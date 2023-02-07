@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'classes',
     pathMatch: 'full'
   },
   {
@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'classes',
     loadChildren: () => import('./info/classes/classes.module').then( m => m.ClassesPageModule)
+  },
+  {
+    path: 'class-details/:id',
+    loadChildren: () => import('./info/classes/class-details/class-details.module').then(m => m.ClassDetailsPageModule)
   }
 ];
 
