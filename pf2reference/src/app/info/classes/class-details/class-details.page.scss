@@ -1,0 +1,24 @@
+ion-card {
+  background: white;
+}
+
+ion-card.rounded{
+  color: var(--ion-text-color);
+  border-radius: 25px;
+  box-shadow: 0 7px 5px 2px #e3e3e3;
+}
+
+ion-card-header{
+  background-color: var(--ion-color-primary);
+  color: var(--ion-background-color);
+  font-size: 20pt;
+  font-weight: bolder;
+}
+
+.push-right{
+  margin-left: 1em;
+}
+
+.odd-level{
+  background-color: #cbc5c3;
+}

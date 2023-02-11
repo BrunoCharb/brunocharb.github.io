@@ -14,13 +14,19 @@
       <ion-col size-xl="10">
           <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
             <h2>Progression table</h2>
-            <ion-row class="ion-text-center">
-              <ion-col size="1">Level</ion-col>
-              <ion-col size="5">Features</ion-col>
-            </ion-row>
-            <ion-row *ngFor="let feature of progression">
-              <ion-col size="1" class="ion-text-center">{{feature.level}}</ion-col>
-              <ion-col size="5">{{feature.features}}</ion-col>
+            <ion-row>
+              <ion-card class="rounded">
+                <ion-card-header class="card-header">
+                  <ion-col size="2">Level</ion-col>
+                  <ion-col size="10" class="push-right">Features</ion-col>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-row *ngFor="let feature of progression">
+                    <ion-col size="2" [ngClass]="{'odd-level': feature.level %2 !== 0, 'ion-text-center': true}" class="ion-text-center">{{feature.level}}</ion-col>
+                    <ion-col size="10" [ngClass]="{'odd-level': feature.level %2 !== 0}">{{feature.features}}</ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
             </ion-row>
           </ion-col>
           <ion-col size="6">

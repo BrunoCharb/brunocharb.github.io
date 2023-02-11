@@ -1,11 +1,11 @@
 <ion-app>
   <ion-menu contentId="main-content" side="start" type="overlay" menuId="principal">
     <ion-header class="menu-style">
-      <ion-toolbar color="light">
+      <ion-toolbar>
         <ion-title>PF2e Reference</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="menu-style">
+    <ion-content color="primary">
       <ion-list id="inbox-list">
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
           <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
