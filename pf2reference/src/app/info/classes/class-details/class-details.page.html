@@ -37,7 +37,22 @@
               <ion-card-header class="card-header">
                 <span>Spell Progression</span>
               </ion-card-header>
-              <ion-card-content class="ion-no-padding">
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 5">
+                <app-cleric-spell-table></app-cleric-spell-table>
+              </ion-card-content>
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 17">
+                <app-sorcerer-spell-table></app-sorcerer-spell-table>
+              </ion-card-content>
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 11">
+                <app-magus-spell-table></app-magus-spell-table>
+              </ion-card-content>
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 14">
+                <app-psychic-spell-table></app-psychic-spell-table>
+              </ion-card-content>
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 18">
+                <app-summoner-spell-table></app-summoner-spell-table>
+              </ion-card-content>
+              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 3 || current_class?.id === 6 || current_class?.id === 13 || current_class?.id === 21 || current_class?.id === 22">
                 <app-common-spell-table></app-common-spell-table>
               </ion-card-content>
             </ion-card>

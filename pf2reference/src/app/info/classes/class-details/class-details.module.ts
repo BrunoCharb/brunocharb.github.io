@@ -12,6 +12,7 @@ import {SorcererSpellTableComponent} from '../../../spell-tables/sorcerer-spell-
 import {MagusSpellTableComponent} from '../../../spell-tables/magus-spell-table/magus-spell-table.component';
 import {PsychicSpellTableComponent} from '../../../spell-tables/psychic-spell-table/psychic-spell-table.component';
 import {ClericSpellTableComponent} from '../../../spell-tables/cleric-spell-table/cleric-spell-table.component';
+import {SummonerSpellTableComponent} from '../../../spell-tables/summoner-spell-table/summoner-spell-table.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import {ClericSpellTableComponent} from '../../../spell-tables/cleric-spell-tabl
     SorcererSpellTableComponent,
     MagusSpellTableComponent,
     PsychicSpellTableComponent,
-    ClericSpellTableComponent]
+    ClericSpellTableComponent,
+    SummonerSpellTableComponent]
 })
 export class ClassDetailsPageModule {}
