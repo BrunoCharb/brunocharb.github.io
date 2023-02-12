@@ -4,4 +4,5 @@ export interface Character_classes{
   short_description: string;
   key_abilities: string[];
   class_hp: number;
+  spells: boolean;
 }
