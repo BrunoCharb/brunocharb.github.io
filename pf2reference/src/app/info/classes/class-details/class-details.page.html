@@ -12,57 +12,327 @@
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xl="10">
-        <ion-row>
-          <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
-            <ion-row class="ion-text-center">
-              <img src="../../../../assets/images/characters/{{current_class?.name}}.png" alt="Class example character"/>
+        <ion-segment [(ngModel)]="segment">
+          <ion-segment-button value="details">
+            General
+          </ion-segment-button>
+          <ion-segment-button value="features">
+            Class Features
+          </ion-segment-button>
+          <ion-segment-button value="subclass">
+            {{current_class?.subclass_name}}
+          </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+          <div *ngSwitchCase="'details'">
+            <ion-row class="ion-margin-top heading">
+              <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5" size-xl="5">
+                <h2 class="ion-margin-start bolder">Key Ability</h2>
+                <div *ngFor="let key of current_class?.key_abilities" class="ion-margin-start">
+                  <h3>{{key}}</h3>
+                </div>
+                <p class="ion-margin-start">At 1st level, your class gives you an ability boost to your key ability.</p>
+              </ion-col>
+              <div>
+                <ion-col size-xs="12" size-sm="12" size-md="7" size-lg="7" size-xl="7">
+                  <h2 class="bolder">Hit points</h2>
+                  <h3>{{current_class?.class_hp}} plus your constitution modifier</h3>
+                  <p>You increase your maximum number of HP by this number at 1st level and every level thereafter.</p>
+                </ion-col>
+              </div>
             </ion-row>
-          </ion-col>
-          <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
             <ion-row>
-              <h2>Progression table</h2>
-              <ion-card class="rounded">
-                <ion-card-header class="card-header">
-                  <ion-col size="2">Level</ion-col>
-                  <ion-col size="10" class="push-right">Features</ion-col>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-row *ngFor="let feature of progression">
-                    <ion-col size="2" [ngClass]="{'odd-level': feature.level %2 !== 0, 'ion-text-center': true}" class="ion-text-center">{{feature.level}}</ion-col>
-                    <ion-col size="10" [ngClass]="{'odd-level': feature.level %2 !== 0}">{{feature.features}}</ion-col>
-                  </ion-row>
-                </ion-card-content>
-              </ion-card>
+              <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+                <ion-row class="ion-text-center">
+                  <img src="../../../../assets/images/characters/{{current_class?.name}}.png"
+                       alt="Class example character"/>
+                </ion-row>
+              </ion-col>
+              <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+                <ion-row class="small-header">
+                  <div>
+                    <h2 class="ion-margin-start">Initial Proficiencies</h2>
+                  </div>
+                </ion-row>
+                <ion-row>
+                  <div>
+                    <p class="ion-margin-start">At 1st level, you gain the listed proficiency ranks in the following
+                      statistics. You are untrained in anything not listed unless you gain a better proficiency rank in
+                      some other way.</p>
+                  </div>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Perception</h3>
+                </ion-row>
+                <ion-row>
+                  <p class="ion-margin-start">{{current_class?.perception}}</p>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Saving throws</h3>
+                </ion-row>
+                <ion-row>
+                  <ul>
+                    <li *ngFor="let st of current_class?.saving_throws">{{st}}</li>
+                  </ul>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Skills</h3>
+                </ion-row>
+                <ion-row>
+                  <ul>
+                    <li *ngFor="let skill of current_class?.init_skills">{{skill}}</li>
+                  </ul>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Attacks</h3>
+                </ion-row>
+                <ion-row>
+                  <ul>
+                    <li *ngFor="let attack of current_class?.attacks">{{attack}}</li>
+                  </ul>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Defenses</h3>
+                </ion-row>
+                <ion-row>
+                  <ul>
+                    <li *ngFor="let def of current_class?.defenses">{{def}}</li>
+                  </ul>
+                </ion-row>
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Spells and class DCs</h3>
+                </ion-row>
+                <ion-row>
+                  <ul>
+                    <li *ngFor="let dc of current_class?.dcs">{{dc}}</li>
+                  </ul>
+                </ion-row>
+              </ion-col>
             </ion-row>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" *ngIf="current_class?.spells">
-            <ion-card class="rounded">
-              <ion-card-header class="card-header">
-                <span>Spell Progression</span>
-              </ion-card-header>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 5">
-                <app-cleric-spell-table></app-cleric-spell-table>
-              </ion-card-content>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 17">
-                <app-sorcerer-spell-table></app-sorcerer-spell-table>
-              </ion-card-content>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 11">
-                <app-magus-spell-table></app-magus-spell-table>
-              </ion-card-content>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 14">
-                <app-psychic-spell-table></app-psychic-spell-table>
-              </ion-card-content>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 18">
-                <app-summoner-spell-table></app-summoner-spell-table>
-              </ion-card-content>
-              <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 3 || current_class?.id === 6 || current_class?.id === 13 || current_class?.id === 21 || current_class?.id === 22">
-                <app-common-spell-table></app-common-spell-table>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
+          </div>
+          <div *ngSwitchCase="'features'">
+            <ion-row>
+              <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+                <ion-row class="ion-text-center">
+                  <img src="../../../../assets/images/characters/{{current_class?.name}}.png"
+                       alt="Class example character"/>
+                </ion-row>
+              </ion-col>
+              <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+                <ion-row>
+                  <h2>Progression table</h2>
+                  <ion-card class="rounded">
+                    <ion-card-header class="card-header">
+                      <ion-col size="2">Level</ion-col>
+                      <ion-col size="10" class="push-right">Features</ion-col>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-row *ngFor="let feature of progression">
+                        <ion-col size="2" [ngClass]="{'odd-level': feature.level %2 !== 0, 'ion-text-center': true}"
+                                 class="ion-text-center">{{feature.level}}</ion-col>
+                        <ion-col size="10"
+                                 [ngClass]="{'odd-level': feature.level %2 !== 0}">{{feature.features}}</ion-col>
+                      </ion-row>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" *ngIf="current_class?.spells">
+                <ion-card class="rounded">
+                  <ion-card-header class="card-header">
+                    <span>Spell Progression</span>
+                  </ion-card-header>
+                  <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 5">
+                    <app-cleric-spell-table></app-cleric-spell-table>
+                  </ion-card-content>
+                  <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 17">
+                    <app-sorcerer-spell-table></app-sorcerer-spell-table>
+                  </ion-card-content>
+                  <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 11">
+                    <app-magus-spell-table></app-magus-spell-table>
+                  </ion-card-content>
+                  <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 14">
+                    <app-psychic-spell-table></app-psychic-spell-table>
+                  </ion-card-content>
+                  <ion-card-content class="ion-no-padding" *ngIf="current_class?.id === 18">
+                    <app-summoner-spell-table></app-summoner-spell-table>
+                  </ion-card-content>
+                  <ion-card-content class="ion-no-padding"
+                                    *ngIf="current_class?.id === 3 || current_class?.id === 6 || current_class?.id === 13 || current_class?.id === 21 || current_class?.id === 22">
+                    <app-common-spell-table></app-common-spell-table>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div *ngSwitchCase="'subclass'">
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">{{current_class?.subclass_name}}</h2>
+            </ion-row>
+            <ion-row>
+              <p class="ion-margin-start">{{current_class?.subclass_desc}}</p>
+            </ion-row>
+            <div *ngIf="current_class?.id === 13">
+              <p>Choose the divine mystery that fuels your mystical power. Your mystery might represent a pantheistic
+                devotion to all the deities with power over the subject of your mystery, veneration of a particular
+                ideal, or a conduit to raw divine energy. Whatever its origin and nature, your mystery determines the
+                revelation spells you can cast and the oracular curse that overtakes your body when you do. You learn
+                skills related to that mystery, gain access to a cantrip, and gain a special benefit drawn from the
+                combined divine knowledge and experience of your mystery.</p>
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Reading a Mystery entry</h3>
+              </ion-row>
+              <p>A mystery entry contains the following information, followed by a description of that mystery's
+                curse.</p>
+              <p><strong>Mystery Benefit : </strong>The mystery benefit is a special ability (or abilities) you gain
+                from your mystery.</p>
+              <p><strong>Trained Skill : </strong>You become trained in the listed skill. A few mysteries make you
+                trained in more than one skill.</p>
+              <p><strong>Granted Cantrip : </strong>You automatically add this cantrip to your spell repertoire, in
+                addition to those you gain through divine spellcasting.</p>
+              <p><strong>Revelation Spells : </strong>You automatically gain your mystery's initial revelation spell at
+                1st level and can gain more by selecting the Advanced Revelation, Greater Revelation, and Diverse
+                Mystery oracle feats.</p>
+              <p><strong>Related Domains : </strong>These are the cleric domains associated with your mystery. You
+                select one initial domain spell from one of these domains at 1st level, which you can cast as a
+                revelation spell with the cursebound trait. </p>
+            </div>
+            <div *ngIf="current_class?.id === 14">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Conscious Minds</h3>
+              </ion-row>
+              <p class="ion-margin-start">Specific spells you learn come from your conscious mind, which shapes the raw
+                psychic power from your
+                subconscious into the forms and phenomena that you intentionally cast. You select your conscious mind at
+                1st level, and it determines the following.</p>
+              <p class="ion-margin-start"><strong>Granted Spells : </strong>You automatically add the spells listed here
+                to your spell
+                repertoire, in addition to those you gain through psychic spellcasting. At 1st level, you gain a
+                1st-level spell, and you learn the other spells on the list as soon as you gain the ability to cast
+                psychic spells of that level, learning the 2nd-level spell at 3rd level, the 3rd-level spell at 5th
+                level, and so on.</p>
+              <p class="ion-margin-start"><strong>Standard Psi Cantrips : </strong>These are two common cantrips you
+                automatically gain at 1st
+                level. While these are the same cantrips used by other spellcasters, you cast them as psi cantrips,
+                enabling you to amp them for greater effect. Your mastery of psychic magic also grants you a passive
+                benefit that applies every time you cast these cantrips, even when you haven't amped them. These
+                benefits apply only with cantrips you gain from your conscious mind; you would cast a cantrip you gained
+                with your psychic spellcasting class feature, for example, as normal even if it appears in a different
+                conscious mind.</p>
+              <p class="ion-margin-start"><strong>Unique Psi Cantrips : </strong>These psi cantrips are unique to your
+                conscious mind. You
+                automatically gain the surface psi cantrip at 1st level, automatically gain the deeper psi cantrip at
+                6th level, and automatically gain the deepest psi cantrip at 10th level.</p>
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Subconscious Minds</h3>
+              </ion-row>
+              <p class="ion-margin-start">The core of how you cast spells comes from the subconscious portions of your
+                mind. Because you cast spells using the power of your subconscious mind, you replace verbal components
+                of spells with thought components. Thought components add the concentrate trait to the spell like verbal
+                components do, but they don't require you to speak. Details of each subconscious mind's thought
+                components appear in its entry. You select your subconscious mind at 1st level, and it determines the
+                following.</p>
+              <p class="ion-margin-start"><strong>Key Ability : </strong>You gain an ability boost to your key ability
+                score and use this ability modifier to determine your spell attack rolls and spell DCs.</p>
+              <p class="ion-margin-start"><strong>Psyche Action : </strong>This is a unique ability you can use while
+                your Psyche is Unleashed.</p>
+            </div>
+            <div *ngIf="current_class?.id === 11">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Conflux Spells</h3>
+              </ion-row>
+              <p class="ion-margin-start">You learn a conflux spell from your hybrid study, and you can cast additional
+                conflux spells by
+                selecting certain feats. Conflux spells are magus-specific spells created for combat and are a type of
+                focus spell. It costs 1 Focus Point to cast a focus spell, and you start with a focus pool of 1 Focus
+                Point. You refill your focus pool during your daily preparations, and you can regain 1 Focus Point by
+                spending 10 minutes using the Refocus activity to both study your spellbook and perform a physical
+                regimen.</p>
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Studious Spells</h3>
+              </ion-row>
+              <p class="ion-margin-start">Your hybrid study grants you additional spells that can enhance your power in
+                combat. You gain two
+                special 2nd-level studious spell slots, which can be used to prepare spider climb, true strike, water
+                breathing, and an additional spell depending on your hybrid study. You add any spells from this class
+                feature to your spellbook. At 11th level, the extra slots increase to 3rd level and you add haste and an
+                additional spell depending on your hybrid study. At 13th level, the extra slots increase to 4th level
+                and you add fly and an additional spell depending on your hybrid study.
+              </p>
+            </div>
+            <div *ngIf="current_class?.id === 17">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Bloodline Spells</h3>
+              </ion-row>
+              <p class="ion-margin-start">Your bloodline grants you bloodline spells, special spells unique to your
+                lineage. Bloodline spells are a type of focus spell. It costs 1 Focus Point to cast a focus spell, and
+                you start with a focus pool of 1 Focus Point. You refill your focus pool during your daily
+                preparations, and you can regain 1 Focus Point by spending 10 minutes using the Refocus activity.
+                Unlike other characters, you don't need to do anything specific to Refocus, as the power flowing
+                through your veins naturally replenishes your focus pool.</p>
+              <p class="ion-margin-start">Focus spells are automatically heightened to half your level rounded up.
+                Focus spells don't require spell slots, nor can you cast them using spell slots. Taking feats can give
+                you more focus spells and increase the size of your focus pool, though your focus pool can never hold
+                more than 3 points. The full rules can be found here.
+              </p>
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Reading a Bloodline entry</h3>
+              </ion-row>
+              <p class="ion-margin-start">A bloodline entry contains the following information.</p>
+              <p class="ion-margin-start"><strong>Spell List : </strong>You use this magical tradition and spell list.
+              </p>
+              <p class="ion-margin-start"><strong>Bloodline Skills : </strong>You become trained in the listed skills.
+              </p>
+              <p class="ion-margin-start"><strong>Granted Spells : </strong>You automatically add the spells listed here
+                to your spell repertoire, as described in the Spell Repertoire class feature. At 1st level, you gain a
+                cantrip and a 1st-level spell. You learn the other spells on the list as soon as you gain the ability to
+                cast sorcerer spells of that level.</p>
+              <p class="ion-margin-start"><strong>Bloodline Spells : </strong>You automatically gain the initial
+                bloodline spell at 1st level and can gain more by selecting the Advanced Bloodline and Greater Bloodline
+                feats.</p>
+              <p class="ion-margin-start"><strong>Blood Magic : </strong>Whenever you cast a bloodline spell using Focus
+                Points or a granted spell from your bloodline using a spell slot, you gain a blood magic effect. If the
+                blood magic offers a choice, make it before resolving the spell. The blood magic effect occurs after
+                resolving any checks for the spell's initial effects and, against a foe, applies only if the spell is a
+                successful attack or the foe fails its saving throw. If the spell has an area, you must designate
+                yourself or one target in the area when you cast the spell to be the target of the blood magic effect.
+                All references to spell level refer to the level of the spell you cast.
+              </p>
+            </div>
+            <div *ngIf="current_class?.id === 19">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Exemplary Finisher (9th)</h3>
+              </ion-row>
+              <p class="ion-margin-start">You execute your finishing moves with spectacular flair, adding special effects to your finishers. If a Strike you make as part of a finisher hits a foe, you add one of the following effects to the Strike, depending on your swashbuckler's style.</p>
+            </div>
+            <div>
+              <ion-row class="ion-justify-content-center">
+                <ion-select [(ngModel)]="subclass" class="select-style">
+                  <ion-select-option [value]="0">Select a {{current_class?.subclass_name}}</ion-select-option>
+                  <ion-select-option *ngFor="let sub of subclasses" [value]="sub?.id">{{sub?.name}}</ion-select-option>
+                </ion-select>
+              </ion-row>
+            </div>
+
+            <div *ngIf="subclass === 1">
+              <app-bomber></app-bomber>
+            </div>
+            <div *ngIf="subclass === 2">
+              <h2>Chirurgeon</h2>
+            </div>
+            <div *ngIf="subclass === 3">
+              <h2>Mutagenist</h2>
+            </div>
+            <div *ngIf="subclass === 4">
+              <h2>Toxicologist</h2>
+            </div>
+          </div>
+        </div>
+
+
       </ion-col>
     </ion-row>
     <ion-row>

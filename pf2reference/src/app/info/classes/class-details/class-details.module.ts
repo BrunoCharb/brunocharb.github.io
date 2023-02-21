@@ -13,13 +13,15 @@ import {MagusSpellTableComponent} from '../../../spell-tables/magus-spell-table/
 import {PsychicSpellTableComponent} from '../../../spell-tables/psychic-spell-table/psychic-spell-table.component';
 import {ClericSpellTableComponent} from '../../../spell-tables/cleric-spell-table/cleric-spell-table.component';
 import {SummonerSpellTableComponent} from '../../../spell-tables/summoner-spell-table/summoner-spell-table.component';
+import {SharedModule} from '../../../shared/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClassDetailsPageRoutingModule
+    ClassDetailsPageRoutingModule,
+    SharedModule
   ],
   declarations: [ClassDetailsPage,
     CommonSpellTableComponent,

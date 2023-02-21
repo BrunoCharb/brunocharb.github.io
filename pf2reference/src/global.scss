@@ -38,3 +38,42 @@ ion-menu-button {
 .light-text{
   color: var(--ion-background-color);
 }
+
+.heading{
+  background-color: #5E0000 !important;
+  color: var(--ion-background-color);
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.vertical-separator{
+  border-left: 4px var(--ion-background-color);
+}
+
+.small-header{
+  background-color: #5E0000 !important;
+  color: var(--ion-background-color);
+  border-radius: 25px;
+}
+
+.alert-wrapper{
+  background-color: #5E0000 !important;
+  color: var(--ion-background-color);
+  .alert-button-inner {
+    color: var(--ion-background-color) !important;
+  }
+
+  .alert-radio-icon,.alert-radio-inner{
+    color: var(--ion-background-color) !important;
+  }
+
+  [aria-checked="true"].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md{
+    border-color: var(--ion-background-color);
+  }
+
+  .alert-radio-inner.sc-ion-alert-md{
+    background-color: var(--ion-background-color);
+  }
+}
