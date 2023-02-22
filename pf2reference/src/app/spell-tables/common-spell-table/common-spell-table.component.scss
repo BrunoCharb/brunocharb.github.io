@@ -6,3 +6,12 @@
 .odd-level{
   background-color: #cbc5c3;
 }
+
+ion-card-header:after {
+  margin-top: 0.2em;
+  margin-left: -0.1em;
+  border-bottom: 0.05em solid var(--ion-background-color);
+  content: '';
+  display: block;
+  width: 100%;
+}
