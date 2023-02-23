@@ -77,3 +77,12 @@ ion-menu-button {
     background-color: var(--ion-background-color);
   }
 }
+
+.badge-like{
+  display: inline-block;
+  background-color: var(--ion-color-primary);
+  color: var(--ion-background-color);
+  border-radius: 50px;
+  padding: 2px 8px 10px 10px;
+}
+
