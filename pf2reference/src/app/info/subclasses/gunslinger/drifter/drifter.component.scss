@@ -1,0 +1,101 @@
+/* Cartes de projet */
+ion-card-content img{
+  border-radius: 50%;
+}
+
+ion-card {
+  background: white;
+}
+
+ion-card.rounded{
+  color: var(--ion-text-color);
+  border-radius: 25px;
+  box-shadow: 0 7px 5px 2px #e3e3e3;
+}
+
+ion-card-title{
+  color: #1a1a1a;
+  padding-top: 1em;
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+/* Attribut qui colore le chevron entre les deux dates */
+ion-card-content span{
+  color: var(--ion-color-primary);
+}
+
+/* Marge pour faire une indentation sous le titre */
+ion-card-content p{
+  padding-left: 2em;
+}
+
+.card-footer{
+  color: var(--ion-color-primary);
+}
+
+/* CSS pour la ligne de démarcation sur la carte (pour faire un pseudo footer) */
+.card-footer:before {
+  margin-top: 0.2em;
+  margin-left: -0.1em;
+  border-bottom: 0.2em solid #5E0000;
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+/* Positionnement du bouton ... dans le coin supérieur droit */
+#optionsProjet{
+  position: absolute;
+  right: 0;
+  padding: 10px 5px !important;
+  margin: 10px 2px;
+}
+
+/* Apparence des icônes avec le badge bien placé */
+.card-footer ion-icon{
+  font-size: 30pt;
+}
+
+ion-badge{
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  border-radius: 100%;
+  border: solid 3px;
+  border-color: white;
+  font-size: 8pt;
+  color: white;
+}
+
+/* Attributs différents pour les petites cartes */
+
+ion-card-title.carte-small{
+  font-weight: bold;
+}
+/*
+ion-card-subtitle.carte-small{
+  color: var(--ion-color-gris);
+}
+
+ion-card-content{
+  color: var(--ion-color-bleu-gris-tint);
+}
+*/
+ion-card-header{
+  background-color: var(--ion-color-primary);
+  color: var(--ion-background-color);
+  font-size: 20pt;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.separator:after {
+  margin-top: 0.2em;
+  margin-left: -2em;
+  border-bottom: 0.05em solid black;
+  content: '';
+  display: block;
+  width: 100%;
+}
+

@@ -30,6 +30,12 @@ import {StoneDruidComponent} from '../../info/subclasses/druid/stone-druid/stone
 import {StormDruidComponent} from '../../info/subclasses/druid/storm-druid/storm-druid.component';
 import {WaveDruidComponent} from '../../info/subclasses/druid/wave-druid/wave-druid.component';
 import {WildDruidComponent} from '../../info/subclasses/druid/wild-druid/wild-druid.component';
+import {DrifterComponent} from '../../info/subclasses/gunslinger/drifter/drifter.component';
+import {PistoleroComponent} from '../../info/subclasses/gunslinger/pistolero/pistolero.component';
+import {SniperComponent} from '../../info/subclasses/gunslinger/sniper/sniper.component';
+import {SpellshotComponent} from '../../info/subclasses/gunslinger/spellshot/spellshot.component';
+import {TriggerbrandComponent} from '../../info/subclasses/gunslinger/triggerbrand/triggerbrand.component';
+import {VanguardComponent} from '../../info/subclasses/gunslinger/vanguard/vanguard.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -60,7 +66,13 @@ import {WildDruidComponent} from '../../info/subclasses/druid/wild-druid/wild-dr
   StoneDruidComponent,
   StormDruidComponent,
   WaveDruidComponent,
-  WildDruidComponent],
+  WildDruidComponent,
+  DrifterComponent,
+  PistoleroComponent,
+  SniperComponent,
+  SpellshotComponent,
+  TriggerbrandComponent,
+  VanguardComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -93,6 +105,12 @@ import {WildDruidComponent} from '../../info/subclasses/druid/wild-druid/wild-dr
     StoneDruidComponent,
     StormDruidComponent,
     WaveDruidComponent,
-    WildDruidComponent]
+    WildDruidComponent,
+    DrifterComponent,
+    PistoleroComponent,
+    SniperComponent,
+    SpellshotComponent,
+    TriggerbrandComponent,
+    VanguardComponent]
 })
 export class SharedModule { }
