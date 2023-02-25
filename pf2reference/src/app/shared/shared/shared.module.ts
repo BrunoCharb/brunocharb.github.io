@@ -36,6 +36,9 @@ import {SniperComponent} from '../../info/subclasses/gunslinger/sniper/sniper.co
 import {SpellshotComponent} from '../../info/subclasses/gunslinger/spellshot/spellshot.component';
 import {TriggerbrandComponent} from '../../info/subclasses/gunslinger/triggerbrand/triggerbrand.component';
 import {VanguardComponent} from '../../info/subclasses/gunslinger/vanguard/vanguard.component';
+import {ArmorInnovationComponent} from '../../info/subclasses/inventor/armor-innovation/armor-innovation.component';
+import {ConstructInnovationComponent} from '../../info/subclasses/inventor/construct-innovation/construct-innovation.component';
+import {WeaponInnovationComponent} from '../../info/subclasses/inventor/weapon-innovation/weapon-innovation.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -72,7 +75,10 @@ import {VanguardComponent} from '../../info/subclasses/gunslinger/vanguard/vangu
   SniperComponent,
   SpellshotComponent,
   TriggerbrandComponent,
-  VanguardComponent],
+  VanguardComponent,
+  ArmorInnovationComponent,
+  ConstructInnovationComponent,
+  WeaponInnovationComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -111,6 +117,9 @@ import {VanguardComponent} from '../../info/subclasses/gunslinger/vanguard/vangu
     SniperComponent,
     SpellshotComponent,
     TriggerbrandComponent,
-    VanguardComponent]
+    VanguardComponent,
+    ArmorInnovationComponent,
+    ConstructInnovationComponent,
+    WeaponInnovationComponent]
 })
 export class SharedModule { }
