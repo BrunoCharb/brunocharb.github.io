@@ -23,6 +23,13 @@ import {DesecratorComponent} from '../../info/subclasses/champion/desecrator/des
 import {AntipaladinComponent} from '../../info/subclasses/champion/antipaladin/antipaladin.component';
 import {CloisteredComponent} from '../../info/subclasses/cleric/cloistered/cloistered.component';
 import {WarpriestComponent} from '../../info/subclasses/cleric/warpriest/warpriest.component';
+import {AnimalDruidComponent} from '../../info/subclasses/druid/animal-druid/animal-druid.component';
+import {FlameDruidComponent} from '../../info/subclasses/druid/flame-druid/flame-druid.component';
+import {LeafDruidComponent} from '../../info/subclasses/druid/leaf-druid/leaf-druid.component';
+import {StoneDruidComponent} from '../../info/subclasses/druid/stone-druid/stone-druid.component';
+import {StormDruidComponent} from '../../info/subclasses/druid/storm-druid/storm-druid.component';
+import {WaveDruidComponent} from '../../info/subclasses/druid/wave-druid/wave-druid.component';
+import {WildDruidComponent} from '../../info/subclasses/druid/wild-druid/wild-druid.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -46,7 +53,14 @@ import {WarpriestComponent} from '../../info/subclasses/cleric/warpriest/warprie
   DesecratorComponent,
   AntipaladinComponent,
   CloisteredComponent,
-  WarpriestComponent],
+  WarpriestComponent,
+  AnimalDruidComponent,
+  FlameDruidComponent,
+  LeafDruidComponent,
+  StoneDruidComponent,
+  StormDruidComponent,
+  WaveDruidComponent,
+  WildDruidComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -72,6 +86,13 @@ import {WarpriestComponent} from '../../info/subclasses/cleric/warpriest/warprie
     DesecratorComponent,
     AntipaladinComponent,
     CloisteredComponent,
-    WarpriestComponent]
+    WarpriestComponent,
+    AnimalDruidComponent,
+    FlameDruidComponent,
+    LeafDruidComponent,
+    StoneDruidComponent,
+    StormDruidComponent,
+    WaveDruidComponent,
+    WildDruidComponent]
 })
 export class SharedModule { }
