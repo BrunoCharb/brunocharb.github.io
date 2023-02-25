@@ -15,6 +15,14 @@ import {EnigmaMuseComponent} from '../../info/subclasses/bard/enigma-muse/enigma
 import {MaestroMuseComponent} from '../../info/subclasses/bard/maestro-muse/maestro-muse.component';
 import {PolymathMuseComponent} from '../../info/subclasses/bard/polymath-muse/polymath-muse.component';
 import {WarriorMuseComponent} from '../../info/subclasses/bard/warrior-muse/warrior-muse.component';
+import {PaladinComponent} from '../../info/subclasses/champion/paladin/paladin.component';
+import {RedeemerComponent} from '../../info/subclasses/champion/redeemer/redeemer.component';
+import {LiberatorComponent} from '../../info/subclasses/champion/liberator/liberator.component';
+import {TyrantComponent} from '../../info/subclasses/champion/tyrant/tyrant.component';
+import {DesecratorComponent} from '../../info/subclasses/champion/desecrator/desecrator.component';
+import {AntipaladinComponent} from '../../info/subclasses/champion/antipaladin/antipaladin.component';
+import {CloisteredComponent} from '../../info/subclasses/cleric/cloistered/cloistered.component';
+import {WarpriestComponent} from '../../info/subclasses/cleric/warpriest/warpriest.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -30,7 +38,15 @@ import {WarriorMuseComponent} from '../../info/subclasses/bard/warrior-muse/warr
   EnigmaMuseComponent,
   MaestroMuseComponent,
   PolymathMuseComponent,
-  WarriorMuseComponent],
+  WarriorMuseComponent,
+  PaladinComponent,
+  RedeemerComponent,
+  LiberatorComponent,
+  TyrantComponent,
+  DesecratorComponent,
+  AntipaladinComponent,
+  CloisteredComponent,
+  WarpriestComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -48,6 +64,14 @@ import {WarriorMuseComponent} from '../../info/subclasses/bard/warrior-muse/warr
     EnigmaMuseComponent,
     MaestroMuseComponent,
     PolymathMuseComponent,
-    WarriorMuseComponent]
+    WarriorMuseComponent,
+    PaladinComponent,
+    RedeemerComponent,
+    LiberatorComponent,
+    TyrantComponent,
+    DesecratorComponent,
+    AntipaladinComponent,
+    CloisteredComponent,
+    WarpriestComponent]
 })
 export class SharedModule { }
