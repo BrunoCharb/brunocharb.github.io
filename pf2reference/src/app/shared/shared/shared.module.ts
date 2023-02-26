@@ -39,6 +39,25 @@ import {VanguardComponent} from '../../info/subclasses/gunslinger/vanguard/vangu
 import {ArmorInnovationComponent} from '../../info/subclasses/inventor/armor-innovation/armor-innovation.component';
 import {ConstructInnovationComponent} from '../../info/subclasses/inventor/construct-innovation/construct-innovation.component';
 import {WeaponInnovationComponent} from '../../info/subclasses/inventor/weapon-innovation/weapon-innovation.component';
+import {AlchemicalSciencesComponent} from '../../info/subclasses/investigator/alchemical-sciences/alchemical-sciences.component';
+import {EmpiricismComponent} from '../../info/subclasses/investigator/empiricism/empiricism.component';
+import {ForensicMedicineComponent} from '../../info/subclasses/investigator/forensic-medicine/forensic-medicine.component';
+import {InterrogationComponent} from '../../info/subclasses/investigator/interrogation/interrogation.component';
+import {InexorableIronComponent} from '../../info/subclasses/magus/inexorable-iron/inexorable-iron.component';
+import {LaughingShadowComponent} from '../../info/subclasses/magus/laughing-shadow/laughing-shadow.component';
+import {SparklingTargeComponent} from '../../info/subclasses/magus/sparkling-targe/sparkling-targe.component';
+import{StarlitSpanComponent} from '../../info/subclasses/magus/starlit-span/starlit-span.component';
+import {TwistingTreeComponent} from '../../info/subclasses/magus/twisting-tree/twisting-tree.component';
+import {AshComponent} from '../../info/subclasses/oracle/ash/ash.component';
+import {AncestorsComponent} from '../../info/subclasses/oracle/ancestors/ancestors.component';
+import {BattleComponent} from '../../info/subclasses/oracle/battle/battle.component';
+import {BonesComponent} from '../../info/subclasses/oracle/bones/bones.component';
+import {CosmosComponent} from '../../info/subclasses/oracle/cosmos/cosmos.component';
+import {FlamesComponent} from '../../info/subclasses/oracle/flames/flames.component';
+import {LifeComponent} from '../../info/subclasses/oracle/life/life.component';
+import {LoreComponent} from '../../info/subclasses/oracle/lore/lore.component';
+import {TempestComponent} from '../../info/subclasses/oracle/tempest/tempest.component';
+import {TimeComponent} from '../../info/subclasses/oracle/time/time.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -78,7 +97,26 @@ import {WeaponInnovationComponent} from '../../info/subclasses/inventor/weapon-i
   VanguardComponent,
   ArmorInnovationComponent,
   ConstructInnovationComponent,
-  WeaponInnovationComponent],
+  WeaponInnovationComponent,
+  AlchemicalSciencesComponent,
+  EmpiricismComponent,
+  ForensicMedicineComponent,
+  InterrogationComponent,
+  InexorableIronComponent,
+  LaughingShadowComponent,
+  SparklingTargeComponent,
+  StarlitSpanComponent,
+  TwistingTreeComponent,
+  AncestorsComponent,
+  AshComponent,
+  BattleComponent,
+  BonesComponent,
+  CosmosComponent,
+  FlamesComponent,
+  LifeComponent,
+  LoreComponent,
+  TempestComponent,
+  TimeComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -120,6 +158,24 @@ import {WeaponInnovationComponent} from '../../info/subclasses/inventor/weapon-i
     VanguardComponent,
     ArmorInnovationComponent,
     ConstructInnovationComponent,
-    WeaponInnovationComponent]
+    WeaponInnovationComponent,
+    AlchemicalSciencesComponent,
+    EmpiricismComponent,
+    ForensicMedicineComponent,
+    InterrogationComponent,
+    InexorableIronComponent,
+    LaughingShadowComponent,
+    SparklingTargeComponent,
+    StarlitSpanComponent,
+    TwistingTreeComponent,
+    AshComponent,
+    BattleComponent,
+    BonesComponent,
+    CosmosComponent,
+    FlamesComponent,
+    LifeComponent,
+    LoreComponent,
+    TempestComponent,
+    TimeComponent]
 })
 export class SharedModule { }
