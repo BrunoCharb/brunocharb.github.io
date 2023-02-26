@@ -68,6 +68,30 @@ import {EmotionalAcceptanceComponent} from '../../info/subclasses/psychic/emotio
 import {GatheredLoreComponent} from '../../info/subclasses/psychic/gathered-lore/gathered-lore.component';
 import {PreciseDisciplineComponent} from '../../info/subclasses/psychic/precise-discipline/precise-discipline.component';
 import {WanderingReverieComponent} from '../../info/subclasses/psychic/wandering-reverie/wandering-reverie.component';
+import {FlurryComponent} from '../../info/subclasses/ranger/flurry/flurry.component';
+import {OutwitComponent} from '../../info/subclasses/ranger/outwit/outwit.component';
+import {PrecisionComponent} from '../../info/subclasses/ranger/precision/precision.component';
+import {EldritchTricksterComponent} from '../../info/subclasses/rogue/eldritch-trickster/eldritch-trickster.component';
+import {MastermindComponent} from '../../info/subclasses/rogue/mastermind/mastermind.component';
+import {RuffianComponent} from '../../info/subclasses/rogue/ruffian/ruffian.component';
+import {ScoundrelComponent} from '../../info/subclasses/rogue/scoundrel/scoundrel.component';
+import {ThiefComponent} from '../../info/subclasses/rogue/thief/thief.component';
+import {AberrantBloodlineComponent} from '../../info/subclasses/sorcerer/aberrant-bloodline/aberrant-bloodline.component';
+import {AngelicBloodlineComponent} from '../../info/subclasses/sorcerer/angelic-bloodline/angelic-bloodline.component';
+import {DemonicBloodlineComponent} from '../../info/subclasses/sorcerer/demonic-bloodline/demonic-bloodline.component';
+import {DiabolicBloodlineComponent} from '../../info/subclasses/sorcerer/diabolic-bloodline/diabolic-bloodline.component';
+import {DraconicBloodlineComponent} from '../../info/subclasses/sorcerer/draconic-bloodline/draconic-bloodline.component';
+import {ElementalBloodlineComponent} from '../../info/subclasses/sorcerer/elemental-bloodline/elemental-bloodline.component';
+import {FeyBloodlineComponent} from '../../info/subclasses/sorcerer/fey-bloodline/fey-bloodline.component';
+import {GenieBloodlineComponent} from '../../info/subclasses/sorcerer/genie-bloodline/genie-bloodline.component';
+import {HagBloodlineComponent} from '../../info/subclasses/sorcerer/hag-bloodline/hag-bloodline.component';
+import {ImperialBloodlineComponent} from '../../info/subclasses/sorcerer/imperial-bloodline/imperial-bloodline.component';
+import {NymphBloodlineComponent} from '../../info/subclasses/sorcerer/nymph-bloodline/nymph-bloodline.component';
+import {PhoenixBloodlineComponent} from '../../info/subclasses/sorcerer/phoenix-bloodline/phoenix-bloodline.component';
+import {PsychopompBloodlineComponent} from '../../info/subclasses/sorcerer/psychopomp-bloodline/psychopomp-bloodline.component';
+import {ShadowBloodlineComponent} from '../../info/subclasses/sorcerer/shadow-bloodline/shadow-bloodline.component';
+import {UndeadBloodlineComponent} from '../../info/subclasses/sorcerer/undead-bloodline/undead-bloodline.component';
+import {WyrmblessedBloodlineComponent} from '../../info/subclasses/sorcerer/wyrmblessed-bloodline/wyrmblessed-bloodline.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -136,7 +160,31 @@ import {WanderingReverieComponent} from '../../info/subclasses/psychic/wandering
   EmotionalAcceptanceComponent,
   GatheredLoreComponent,
   PreciseDisciplineComponent,
-  WanderingReverieComponent],
+  WanderingReverieComponent,
+  FlurryComponent,
+  PrecisionComponent,
+  OutwitComponent,
+  EldritchTricksterComponent,
+  MastermindComponent,
+  RuffianComponent,
+  ScoundrelComponent,
+  ThiefComponent,
+  AberrantBloodlineComponent,
+  AngelicBloodlineComponent,
+  DemonicBloodlineComponent,
+  DiabolicBloodlineComponent,
+  DraconicBloodlineComponent,
+  ElementalBloodlineComponent,
+  FeyBloodlineComponent,
+  GenieBloodlineComponent,
+  HagBloodlineComponent,
+  ImperialBloodlineComponent,
+  NymphBloodlineComponent,
+  PhoenixBloodlineComponent,
+  PsychopompBloodlineComponent,
+  ShadowBloodlineComponent,
+  UndeadBloodlineComponent,
+  WyrmblessedBloodlineComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -207,6 +255,30 @@ import {WanderingReverieComponent} from '../../info/subclasses/psychic/wandering
     EmotionalAcceptanceComponent,
     GatheredLoreComponent,
     PreciseDisciplineComponent,
-    WanderingReverieComponent]
+    WanderingReverieComponent,
+    FlurryComponent,
+    PrecisionComponent,
+    OutwitComponent,
+    EldritchTricksterComponent,
+    MastermindComponent,
+    RuffianComponent,
+    ScoundrelComponent,
+    ThiefComponent,
+    AberrantBloodlineComponent,
+    AngelicBloodlineComponent,
+    DemonicBloodlineComponent,
+    DiabolicBloodlineComponent,
+    DraconicBloodlineComponent,
+    ElementalBloodlineComponent,
+    FeyBloodlineComponent,
+    GenieBloodlineComponent,
+    HagBloodlineComponent,
+    ImperialBloodlineComponent,
+    NymphBloodlineComponent,
+    PhoenixBloodlineComponent,
+    PsychopompBloodlineComponent,
+    ShadowBloodlineComponent,
+    UndeadBloodlineComponent,
+    WyrmblessedBloodlineComponent]
 })
 export class SharedModule { }
