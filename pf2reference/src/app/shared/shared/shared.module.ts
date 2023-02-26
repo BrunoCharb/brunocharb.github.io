@@ -92,6 +92,20 @@ import {PsychopompBloodlineComponent} from '../../info/subclasses/sorcerer/psych
 import {ShadowBloodlineComponent} from '../../info/subclasses/sorcerer/shadow-bloodline/shadow-bloodline.component';
 import {UndeadBloodlineComponent} from '../../info/subclasses/sorcerer/undead-bloodline/undead-bloodline.component';
 import {WyrmblessedBloodlineComponent} from '../../info/subclasses/sorcerer/wyrmblessed-bloodline/wyrmblessed-bloodline.component';
+import {BattledancerComponent} from '../../info/subclasses/swashbuckler/battledancer/battledancer.component';
+import {BraggartComponent} from '../../info/subclasses/swashbuckler/braggart/braggart.component';
+import {FencerComponent} from '../../info/subclasses/swashbuckler/fencer/fencer.component';
+import {GymnastComponent} from '../../info/subclasses/swashbuckler/gymnast/gymnast.component';
+import {WitComponent} from '../../info/subclasses/swashbuckler/wit/wit.component';
+import {AmuletComponent} from '../../info/subclasses/thaumaturge/amulet/amulet.component';
+import {BellComponent} from '../../info/subclasses/thaumaturge/bell/bell.component';
+import {ChaliceComponent} from '../../info/subclasses/thaumaturge/chalice/chalice.component';
+import {LanternComponent} from '../../info/subclasses/thaumaturge/lantern/lantern.component';
+import {MirrorComponent} from '../../info/subclasses/thaumaturge/mirror/mirror.component';
+import {RegaliaComponent} from '../../info/subclasses/thaumaturge/regalia/regalia.component';
+import {TomeComponent} from '../../info/subclasses/thaumaturge/tome/tome.component';
+import {WandComponent} from '../../info/subclasses/thaumaturge/wand/wand.component';
+import {WeaponComponent} from '../../info/subclasses/thaumaturge/weapon/weapon.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -184,7 +198,21 @@ import {WyrmblessedBloodlineComponent} from '../../info/subclasses/sorcerer/wyrm
   PsychopompBloodlineComponent,
   ShadowBloodlineComponent,
   UndeadBloodlineComponent,
-  WyrmblessedBloodlineComponent],
+  WyrmblessedBloodlineComponent,
+  BattledancerComponent,
+  BraggartComponent,
+  FencerComponent,
+  GymnastComponent,
+  WitComponent,
+  AmuletComponent,
+  BellComponent,
+  ChaliceComponent,
+  LanternComponent,
+  MirrorComponent,
+  RegaliaComponent,
+  TomeComponent,
+  WandComponent,
+  WeaponComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -279,6 +307,20 @@ import {WyrmblessedBloodlineComponent} from '../../info/subclasses/sorcerer/wyrm
     PsychopompBloodlineComponent,
     ShadowBloodlineComponent,
     UndeadBloodlineComponent,
-    WyrmblessedBloodlineComponent]
+    WyrmblessedBloodlineComponent,
+    BattledancerComponent,
+    BraggartComponent,
+    FencerComponent,
+    GymnastComponent,
+    WitComponent,
+    AmuletComponent,
+    BellComponent,
+    ChaliceComponent,
+    LanternComponent,
+    MirrorComponent,
+    RegaliaComponent,
+    TomeComponent,
+    WandComponent,
+    WeaponComponent]
 })
 export class SharedModule { }
