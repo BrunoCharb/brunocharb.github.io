@@ -58,6 +58,16 @@ import {LifeComponent} from '../../info/subclasses/oracle/life/life.component';
 import {LoreComponent} from '../../info/subclasses/oracle/lore/lore.component';
 import {TempestComponent} from '../../info/subclasses/oracle/tempest/tempest.component';
 import {TimeComponent} from '../../info/subclasses/oracle/time/time.component';
+import {DistantGraspComponent} from '../../info/subclasses/psychic/distant-grasp/distant-grasp.component';
+import {InfiniteEyeComponent} from '../../info/subclasses/psychic/infinite-eye/infinite-eye.component';
+import {OscillatingWaveComponent} from '../../info/subclasses/psychic/oscillating-wave/oscillating-wave.component';
+import {SilentWhisperComponent} from '../../info/subclasses/psychic/silent-whisper/silent-whisper.component';
+import {TangibleDreamComponent} from '../../info/subclasses/psychic/tangible-dream/tangible-dream.component';
+import {UnboundStepComponent} from '../../info/subclasses/psychic/unbound-step/unbound-step.component';
+import {EmotionalAcceptanceComponent} from '../../info/subclasses/psychic/emotional-acceptance/emotional-acceptance.component';
+import {GatheredLoreComponent} from '../../info/subclasses/psychic/gathered-lore/gathered-lore.component';
+import {PreciseDisciplineComponent} from '../../info/subclasses/psychic/precise-discipline/precise-discipline.component';
+import {WanderingReverieComponent} from '../../info/subclasses/psychic/wandering-reverie/wandering-reverie.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -116,7 +126,17 @@ import {TimeComponent} from '../../info/subclasses/oracle/time/time.component';
   LifeComponent,
   LoreComponent,
   TempestComponent,
-  TimeComponent],
+  TimeComponent,
+  DistantGraspComponent,
+  InfiniteEyeComponent,
+  OscillatingWaveComponent,
+  SilentWhisperComponent,
+  TangibleDreamComponent,
+  UnboundStepComponent,
+  EmotionalAcceptanceComponent,
+  GatheredLoreComponent,
+  PreciseDisciplineComponent,
+  WanderingReverieComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -168,6 +188,7 @@ import {TimeComponent} from '../../info/subclasses/oracle/time/time.component';
     SparklingTargeComponent,
     StarlitSpanComponent,
     TwistingTreeComponent,
+    AncestorsComponent,
     AshComponent,
     BattleComponent,
     BonesComponent,
@@ -176,6 +197,16 @@ import {TimeComponent} from '../../info/subclasses/oracle/time/time.component';
     LifeComponent,
     LoreComponent,
     TempestComponent,
-    TimeComponent]
+    TimeComponent,
+    DistantGraspComponent,
+    InfiniteEyeComponent,
+    OscillatingWaveComponent,
+    SilentWhisperComponent,
+    TangibleDreamComponent,
+    UnboundStepComponent,
+    EmotionalAcceptanceComponent,
+    GatheredLoreComponent,
+    PreciseDisciplineComponent,
+    WanderingReverieComponent]
 })
 export class SharedModule { }
