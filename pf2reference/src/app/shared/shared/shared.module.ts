@@ -106,6 +106,16 @@ import {RegaliaComponent} from '../../info/subclasses/thaumaturge/regalia/regali
 import {TomeComponent} from '../../info/subclasses/thaumaturge/tome/tome.component';
 import {WandComponent} from '../../info/subclasses/thaumaturge/wand/wand.component';
 import {WeaponComponent} from '../../info/subclasses/thaumaturge/weapon/weapon.component';
+import {BabaYagaComponent} from '../../info/subclasses/witch/baba-yaga/baba-yaga.component';
+import {CursePatronComponent} from '../../info/subclasses/witch/curse-patron/curse-patron.component';
+import {FatePatronComponent} from '../../info/subclasses/witch/fate-patron/fate-patron.component';
+import {FervorPatronComponent} from '../../info/subclasses/witch/fervor-patron/fervor-patron.component';
+import {MosquitoWitchComponent} from '../../info/subclasses/witch/mosquito-witch/mosquito-witch.component';
+import {NightPatronComponent} from '../../info/subclasses/witch/night-patron/night-patron.component';
+import {PactsPatronComponent} from '../../info/subclasses/witch/pacts-patron/pacts-patron.component';
+import {RunePatronComponent} from '../../info/subclasses/witch/rune-patron/rune-patron.component';
+import {WildPatronComponent} from '../../info/subclasses/witch/wild-patron/wild-patron.component';
+import {WinterPatronComponent} from '../../info/subclasses/witch/winter-patron/winter-patron.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -212,7 +222,17 @@ import {WeaponComponent} from '../../info/subclasses/thaumaturge/weapon/weapon.c
   RegaliaComponent,
   TomeComponent,
   WandComponent,
-  WeaponComponent],
+  WeaponComponent,
+  BabaYagaComponent,
+  CursePatronComponent,
+  FatePatronComponent,
+  FervorPatronComponent,
+  MosquitoWitchComponent,
+  NightPatronComponent,
+  PactsPatronComponent,
+  RunePatronComponent,
+  WildPatronComponent,
+  WinterPatronComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -321,6 +341,16 @@ import {WeaponComponent} from '../../info/subclasses/thaumaturge/weapon/weapon.c
     RegaliaComponent,
     TomeComponent,
     WandComponent,
-    WeaponComponent]
+    WeaponComponent,
+    BabaYagaComponent,
+    CursePatronComponent,
+    FatePatronComponent,
+    FervorPatronComponent,
+    MosquitoWitchComponent,
+    NightPatronComponent,
+    PactsPatronComponent,
+    RunePatronComponent,
+    WildPatronComponent,
+    WinterPatronComponent]
 })
 export class SharedModule { }
