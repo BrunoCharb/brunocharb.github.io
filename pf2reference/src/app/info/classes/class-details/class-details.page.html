@@ -23,6 +23,15 @@
                               *ngIf="current_class?.id !== 7 && current_class?.id !== 12 && current_class?.id !== 18">
             {{current_class?.subclass_name}}
           </ion-segment-button>
+          <ion-segment-button value="classfeats">
+            {{current_class?.name}} Feats
+          </ion-segment-button>
+          <ion-segment-button value="tenets" *ngIf="current_class?.id === 4">
+            Tenets
+          </ion-segment-button>
+          <ion-segment-button value="lessons" *ngIf="current_class?.id === 21">
+            Lessons
+          </ion-segment-button>
           <ion-segment-button value="arcaneschools" *ngIf="current_class?.id === 22">
             Arcane Schools
           </ion-segment-button>
@@ -534,6 +543,21 @@
                 <div *ngIf="subclass === 115">
                   <app-winter-patron></app-winter-patron>
                 </div>
+                <div *ngIf="subclass === 116">
+                  <app-improved-familiar></app-improved-familiar>
+                </div>
+                <div *ngIf="subclass === 117">
+                  <app-metamagical-experimentation></app-metamagical-experimentation>
+                </div>
+                <div *ngIf="subclass === 118">
+                  <app-spell-blending></app-spell-blending>
+                </div>
+                <div *ngIf="subclass === 119">
+                  <app-spell-substitution></app-spell-substitution>
+                </div>
+                <div *ngIf="subclass === 120">
+                  <app-staff-nexus></app-staff-nexus>
+                </div>
               </ion-col>
               <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
                 <div class="ion-text-center">
@@ -720,24 +744,165 @@
             </ion-row>
           </div>
 
+          <div *ngSwitchCase="'classfeats'">
+            <ion-row>
+              <ion-col offset-lg="2" offset-md="2" size-lg="8" size-md="8" size-sm="12" size-xs="12" *ngFor="let feat of class_feats">
+                <div><app-class-feat [feat]="feat"></app-class-feat></div>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
+          <div *ngSwitchCase="'tenets'">
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Tenets</h2>
+            </ion-row>
+            <p class="ion-margin-start">You follow a code of conduct, beginning with tenets shared by all champions of
+              an alignment (such as good), and continuing with tenets of your cause. Deities often add additional
+              strictures (for instance, Torag’s champions can’t show mercy to enemies of their people, making it almost
+              impossible for them to follow the redeemer cause). Only rules for good champions appear in this book.
+              Tenets are listed in order of importance, starting with the most important. If a situation places two
+              tenets in conflict, you aren’t in a no-win situation; instead, follow the more important tenet. For
+              instance, as a paladin, if an evil king asked you if you’re hiding refugees so he could execute them, you
+              could lie to him, since the tenet against lying is less important than preventing harm to innocents.
+              Trying to subvert your code by creating a situation that forces a higher tenet to override a lower tenet
+              (for example, promising not to respect authorities and then, to keep your word, disrespecting authorities)
+              is a violation of the champion code.</p>
+            <p class="ion-margin-start">If you stray from your alignment or violate your code of conduct, you lose your
+              focus pool and divine ally until you demonstrate your repentance by conducting an atone ritual, but you
+              keep any other champion abilities that don’t require those class features. If your alignment shifts but is
+              still one allowed by your deity, your GM might let you retrain your cause while still following the same
+              deity.</p>
+            <ion-row class="small-header ion-margin-top">
+              <h3 class="ion-margin-start">Good</h3>
+            </ion-row>
+            <ul>
+              <li>You must never perform acts anathema to your deity or willingly commit an evil act, such as murder,
+                torture, or the casting of an evil spell.
+              </li>
+              <li>You must never knowingly harm an innocent, or allow immediate harm to one through inaction when you
+                know you could reasonably prevent it. This tenet doesn't force you to take action against possible harm
+                to innocents at an indefinite time in the future, or to sacrifice your life to protect them.
+              </li>
+            </ul>
+            <ion-row class="small-header ion-margin-top">
+              <h3 class="ion-margin-start">Evil</h3>
+            </ion-row>
+            <p class="ion-margin-start">The tenets and causes of evil follow the rules provided in the Core Rulebook.
+              While evil characters in general can range from self-serving but loyal allies to the extremes of
+              depravity, evil champions are particularly vile, with a code that requires, enforces, and depends upon
+              their villainous behavior. This means they can be extremely disruptive to a typical game and should be
+              accessible player character options only in appropriate adventures or campaigns where the group
+              collectively decides to embrace them. The tenets and causes of evil are uncommon options. While the feats
+              and actions suitable for evil champions don't separately list access entries, typically if your GM grants
+              you access to evil tenets, you also gain access to champion actions and feats that require those
+              tenets.</p>
+            <ul>
+              <li>You must never perform acts anathema to your deity or willingly commit a purely good act, such as
+                giving something solely out of charity, casting a good spell, or using a good item.
+              </li>
+              <li>You must never put another person's needs before your own, and you must never put your own needs
+                before those of your deity. Though you can perform acts others might consider helpful, it must be done
+                with the expectation that it ultimately furthers your own goals or those of your master.
+              </li>
+            </ul>
+          </div>
+
+          <div *ngSwitchCase="'lessons'">
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Lessons</h2>
+            </ion-row>
+            <p class="ion-margin-start">A witch's knowledge from their patron comes in the form of lessons, which you
+              can learn by selecting feats like Basic Lesson. Each lesson grants you a hex and teaches your familiar a
+              new spell, adding it to the spells you can prepare using your witch spellcasting. You gain this spell even
+              if it's not on your tradition's spell list. </p>
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Basic Lessons</h2>
+            </ion-row>
+            <p class="ion-margin-start">You can select from these lessons when a feat or another effect grants you a
+              basic lesson.</p>
+            <h3 class="ion-margin-start">Lesson of Calamity</h3>
+            <p class="ion-margin-start">You gain the stumbling curse hex, and your familiar learns ill omen.</p>
+            <h3 class="ion-margin-start">Lesson of Dreams</h3>
+            <p class="ion-margin-start">You gain the veil of dreams hex, and your familiar learns sleep.</p>
+            <h3 class="ion-margin-start">Lesson of Life</h3>
+            <p class="ion-margin-start">You gain the life boost hex, and your familiar learns spirit link.</p>
+            <h3 class="ion-margin-start">Lesson of Protection</h3>
+            <p class="ion-margin-start">You gain the blood ward hex, and your familiar learns mage armor.</p>
+            <h3 class="ion-margin-start">Lesson of the Elements</h3>
+            <p class="ion-margin-start">You gain the elemental betrayal hex. Your familiar learns your choice of burning
+              hands, air bubble, hydraulic push, or pummeling rubble.</p>
+            <h3 class="ion-margin-start">Lesson of Vengance</h3>
+            <p class="ion-margin-start">You gain the needle of vengeance hex, and your familiar learns phantom pain.</p>
+
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Greater Lessons</h2>
+            </ion-row>
+            <p class="ion-margin-start">You can select from these lessons when a feat or another effect grants you a
+              greater lesson.</p>
+            <h3 class="ion-margin-start">Lesson of Favor</h3>
+            <p class="ion-margin-start">You gain the return the favor hex, and your familiar learns mind of menace.</p>
+            <h3 class="ion-margin-start">Lesson of Mischief</h3>
+            <p class="ion-margin-start">You gain the deceiver's cloak hex, and your familiar learns mad monkeys.</p>
+            <h3 class="ion-margin-start">Lesson of Shadow</h3>
+            <p class="ion-margin-start">You gain the malicious shadow hex, and your familiar learns chilling
+              darkness.</p>
+            <h3 class="ion-margin-start">Lesson of Snow</h3>
+            <p class="ion-margin-start">You gain the personal blizzard hex, and your familiar learns wall of wind.</p>
+
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Major Lessons</h2>
+            </ion-row>
+            <p class="ion-margin-start">You can select from these lessons when a feat or another effect grants you a
+              major lesson.</p>
+            <h3 class="ion-margin-start">Lesson of Bargains</h3>
+            <p class="ion-margin-start">You gain the over the coals hex, and your familiar learns subconscious
+              suggestion.</p>
+            <h3 class="ion-margin-start">Lesson of Death</h3>
+            <p class="ion-margin-start">You gain the curse of death hex, and your familiar learns raise dead.</p>
+            <h3 class="ion-margin-start">Lesson of Reneweal</h3>
+            <p class="ion-margin-start">You gain the restorative moment hex, and your familiar learns field of life.</p>
+            <h3 class="ion-margin-start">Lesson of The Frozen Queen</h3>
+            <p class="ion-margin-start">You gain the glacial heart hex, and your familiar learns wall of ice.</p>
+          </div>
+
           <div *ngSwitchCase="'arcaneschools'">
             <ion-row class="small-header ion-margin-top">
               <h2 class="ion-margin-start">Arcane Schools</h2>
             </ion-row>
-            <p>If you specialize in an arcane school, rather than studying each school equally (as universalists
+            <p class="ion-margin-start">If you specialize in an arcane school, rather than studying each school equally (as universalists
               do), you gain an extra spell slot at each spell level for which you have wizard spell slots. You
               can prepare only spells of your chosen arcane school in these extra slots. In addition, you can
               prepare an extra cantrip of your chosen school. You also add another arcane spell of your chosen
               school to your spellbook.</p>
-            <p>You learn a school spell, a special type of spell taught to students of your arcane school.
+            <p class="ion-margin-start">You learn a school spell, a special type of spell taught to students of your arcane school.
               School spells are a type of focus spell. It costs 1 Focus Point to cast a focus spell, and you
               start with a focus pool of 1 Focus Point. You refill your focus pool during your daily
               preparations, and you can regain 1 Focus Point by spending 10 minutes using the Refocus activity
               to study your spellbook or perform arcane research.</p>
-            <p>Focus spells are automatically heightened to half your level rounded up. Focus spells don't
+            <p class="ion-margin-start">Focus spells are automatically heightened to half your level rounded up. Focus spells don't
               require spell slots, nor can you cast them using spell slots. Certain feats can give you more
               focus spells and increase the size of your focus pool, though your focus pool can never hold more
-              than 3 Focus Points. The full rules for focus spells appear here.</p>
+              than 3 Focus Points.</p>
+
+            <h3 class="ion-margin-start">Abjuration</h3>
+            <p class="ion-margin-start">As an abjurer, you master the art of protection, strengthening defenses, preventing attacks, and even turning magic against itself. You understand that an ounce of prevention is worth a pound of cure. You add one 1st-level abjuration spell (such as feather fall) to your spellbook. You learn the protective ward school spell.</p>
+            <h3 class="ion-margin-start">Conjuration</h3>
+            <p class="ion-margin-start">As a conjurer, you summon creatures and objects from places beyond, and use magic to transport to distant locales. You understand that the true key to victory is strength in numbers. You add one 1st-level conjuration spell (such as summon animal) to your spellbook. You learn the augment summoning school spell.</p>
+            <h3 class="ion-margin-start">Divination</h3>
+            <p class="ion-margin-start">As a diviner, you master remote viewing and prescience, learning information that can transform investigations, research, and battle strategies. You understand that knowledge is power. You add one 1st-level divination spell (such as true strike) to your spellbook. You learn the diviner’s sight school spell.</p>
+            <h3 class="ion-margin-start">Enchantment</h3>
+            <p class="ion-margin-start">As an enchanter, you use magic to manipulate others’ minds. You might use your abilities to subtly influence others or seize control over them. You understand that the mind surpasses matter. You add one 1st-level enchantment spell (such as charm) to your spellbook. You learn the charming words school spell.</p>
+            <h3 class="ion-margin-start">Evocation</h3>
+            <p class="ion-margin-start">As an evoker, you revel in the raw power of magic, using it to create and destroy with ease. You can call forth elements, forces, and energy to devastate your foes or to assist you in other ways. You understand that the most direct approach is the most elegant. You add one 1st-level evocation spell (such as shocking grasp) to your spellbook. You learn the force bolt school spell.</p>
+            <h3 class="ion-margin-start">Illusion</h3>
+            <p class="ion-margin-start">As an illusionist, you use magic to create images, figments, and phantasms to baffle your enemies. You understand that perception is reality. You add one 1st-level illusion spell (such as illusory object) to your spellbook. You learn the warped terrain school spell.</p>
+            <h3 class="ion-margin-start">Necromancy</h3>
+            <p class="ion-margin-start">As a necromancer, you call upon the powers of life and death. While your school is often vilified for its association with raising the undead, you understand that control over life also means control over healing. You add one 1st-level necromancy spell (such as grim tendrils) to your spellbook. You learn the call of the grave school spell.</p>
+            <h3 class="ion-margin-start">Transmutation</h3>
+            <p class="ion-margin-start">As a transmuter, you alter the physical properties of things, transforming creatures, objects, the natural world, and even yourself at your whim. You understand that change is inevitable. You add one 1st-level transmutation spell (such as magic weapon) to your spellbook. You learn the physical boost school spell.</p>
+            <h3 class="ion-margin-start">Universalist</h3>
+            <p class="ion-margin-start">Instead of specializing narrowly in an arcane school, you can become a universalist wizard—by studying all the schools equally, you devote yourself to understanding the full breadth of the arcane arts. For each level of wizard spell slots you have, you can use Drain Bonded Item once per day to recall a spell of that level (instead of using it only once per day in total). You gain an extra wizard class feat, and you add one 1st-level spell of your choice to your spellbook.</p>
           </div>
         </div>
 

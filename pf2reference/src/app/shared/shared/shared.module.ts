@@ -116,6 +116,12 @@ import {PactsPatronComponent} from '../../info/subclasses/witch/pacts-patron/pac
 import {RunePatronComponent} from '../../info/subclasses/witch/rune-patron/rune-patron.component';
 import {WildPatronComponent} from '../../info/subclasses/witch/wild-patron/wild-patron.component';
 import {WinterPatronComponent} from '../../info/subclasses/witch/winter-patron/winter-patron.component';
+import {ImprovedFamiliarComponent} from '../../info/subclasses/wizard/improved-familiar/improved-familiar.component';
+import {MetamagicalExperimentationComponent} from '../../info/subclasses/wizard/metamagical-experimentation/metamagical-experimentation.component';
+import {SpellBlendingComponent} from '../../info/subclasses/wizard/spell-blending/spell-blending.component';
+import {SpellSubstitutionComponent} from '../../info/subclasses/wizard/spell-substitution/spell-substitution.component';
+import {StaffNexusComponent} from '../../info/subclasses/wizard/staff-nexus/staff-nexus.component';
+import {ClassFeatComponent} from '../../info/feats/class-feat/class-feat.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -232,7 +238,13 @@ import {WinterPatronComponent} from '../../info/subclasses/witch/winter-patron/w
   PactsPatronComponent,
   RunePatronComponent,
   WildPatronComponent,
-  WinterPatronComponent],
+  WinterPatronComponent,
+  ImprovedFamiliarComponent,
+  MetamagicalExperimentationComponent,
+  SpellBlendingComponent,
+  SpellSubstitutionComponent,
+  StaffNexusComponent,
+  ClassFeatComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -351,6 +363,12 @@ import {WinterPatronComponent} from '../../info/subclasses/witch/winter-patron/w
     PactsPatronComponent,
     RunePatronComponent,
     WildPatronComponent,
-    WinterPatronComponent]
+    WinterPatronComponent,
+    ImprovedFamiliarComponent,
+    MetamagicalExperimentationComponent,
+    SpellBlendingComponent,
+    SpellSubstitutionComponent,
+    StaffNexusComponent,
+    ClassFeatComponent]
 })
 export class SharedModule { }

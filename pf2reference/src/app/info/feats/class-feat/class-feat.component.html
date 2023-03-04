@@ -1,0 +1,39 @@
+<ion-grid>
+  <ion-card class="rounded">
+    <ion-card-header>
+      <ion-col size="10" class="ion-text-start">
+        <span>{{feat?.name}}</span>
+      </ion-col>
+      <ion-col size="2" class="ion-text-end">
+        <span>(Feat {{feat?.level}})</span>
+      </ion-col>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>{{feat?.name}} <img
+        *ngIf="feat?.action_type && feat?.action_type !== 'double' && feat?.action_type !== 'triple'"
+        src="/assets/images/actions/{{feat?.action_type}}.png" height="25px" width="25px"
+        style="margin-bottom: -5px">
+        <img
+          *ngIf="feat?.action_type && feat?.action_type === 'double'"
+          src="/assets/images/actions/{{feat?.action_type}}.png" height="25px" width="35px"
+          style="margin-bottom: -5px">
+        <img
+          *ngIf="feat?.action_type && feat?.action_type === 'triple'"
+          src="/assets/images/actions/{{feat?.action_type}}.png" height="25px" width="45px"
+          style="margin-bottom: -5px">
+      </h2>
+      <p class="separator"></p>
+      <div *ngFor="let tag of feat?.traits" class="badge-like">
+        {{tag}}
+      </div>
+      <p *ngIf="feat?.archetype"><strong>Archetype : </strong>{{feat?.archetype}}</p>
+      <p *ngIf="feat?.prerequisites"><strong>Prerequisites : </strong>{{feat?.prerequisites}}</p>
+      <p *ngIf="feat?.trigger"><strong>Trigger : </strong>{{feat?.trigger}}</p>
+      <p *ngIf="feat?.frequency"><strong>Frequency : </strong>{{feat?.frequency}}</p>
+      <p *ngIf="feat?.requirements"><strong>Requirements : </strong>{{feat?.requirements}}</p>
+      <p class="separator"></p>
+      <div [innerHTML]="feat?.feat_description"></div>
+      <p class="separator"></p>
+    </ion-card-content>
+  </ion-card>
+</ion-grid>

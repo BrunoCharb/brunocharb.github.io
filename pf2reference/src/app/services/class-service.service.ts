@@ -4,6 +4,7 @@ import {PostgrestResponse, PostgrestSingleResponse} from '@supabase/supabase-js'
 import {Character_classes} from '../models/character_classes';
 import {Progress_table} from '../models/progress_table';
 import {Subclass} from '../models/subclass';
+import {Class_feat} from '../models/class_feat';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,9 @@ export class ClassServiceService {
   public async getSubclasses(classId: string): Promise<PostgrestResponse<Subclass>> {
     return this.supaService.supabaseClient.from('subclasses').select('*')
       .eq('parent_class', classId).order('id');
+  }
+
+  public async getClassFeats(classId: string): Promise<PostgrestResponse<Class_feat>>{
+    return this.supaService.supabaseClient.from('class_feats').select('*').eq('class', classId).order('id');
   }
 }
