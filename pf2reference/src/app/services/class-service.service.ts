@@ -32,6 +32,6 @@ export class ClassServiceService {
   }
 
   public async getClassFeats(classId: string): Promise<PostgrestResponse<Class_feat>>{
-    return this.supaService.supabaseClient.from('class_feats').select('*').eq('class', classId).order('id');
+    return this.supaService.supabaseClient.from('class_feats').select('*').eq('class', classId).order('level').order('name');
   }
 }

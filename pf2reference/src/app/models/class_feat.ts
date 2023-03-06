@@ -11,4 +11,5 @@ export interface Class_feat{
   requirements: string;
   frequency: string;
   archetype: string[];
+  cost: string;
 }

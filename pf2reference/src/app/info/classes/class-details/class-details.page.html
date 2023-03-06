@@ -12,7 +12,7 @@
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xl="10">
-        <ion-segment [(ngModel)]="segment">
+        <ion-segment [(ngModel)]="segment" class="ion-hide-md-down">
           <ion-segment-button value="details">
             General
           </ion-segment-button>
@@ -36,6 +36,16 @@
             Arcane Schools
           </ion-segment-button>
         </ion-segment>
+
+        <ion-select [(ngModel)]="segment" class="ion-hide-md-up">
+          <ion-select-option value="details">General</ion-select-option>
+          <ion-select-option value="features">Class Features</ion-select-option>
+          <ion-select-option value="subclass" *ngIf="current_class?.id !== 7 && current_class?.id !== 12 && current_class?.id !== 18">{{current_class?.subclass_name}}</ion-select-option>
+          <ion-select-option value="classfeats">{{current_class?.name}} Feats</ion-select-option>
+          <ion-select-option value="tenets" *ngIf="current_class?.id === 4">Tenets</ion-select-option>
+          <ion-select-option value="lessons" *ngIf="current_class?.id === 21">Lessons</ion-select-option>
+          <ion-select-option value="arcaneschools" *ngIf="current_class?.id === 22">Arcane Schools</ion-select-option>
+        </ion-select>
 
         <div [ngSwitch]="segment">
           <div *ngSwitchCase="'details'">
@@ -746,6 +756,25 @@
 
           <div *ngSwitchCase="'classfeats'">
             <ion-row>
+              <div>
+                <ion-row class="ion-justify-content-center">
+                  <ion-select [(ngModel)]="feat_level" (ionChange)="filterByLevel()" class="select-style">
+                    <ion-select-option [value]="0">All feats</ion-select-option>
+                    <ion-select-option [value]="1">Level 1 feats</ion-select-option>
+                    <ion-select-option [value]="2">Level 2 feats</ion-select-option>
+                    <ion-select-option [value]="4">Level 4 feats</ion-select-option>
+                    <ion-select-option [value]="6">Level 6 feats</ion-select-option>
+                    <ion-select-option [value]="8">Level 8 feats</ion-select-option>
+                    <ion-select-option [value]="10">Level 10 feats</ion-select-option>
+                    <ion-select-option [value]="12">Level 12 feats</ion-select-option>
+                    <ion-select-option [value]="14">Level 14 feats</ion-select-option>
+                    <ion-select-option [value]="16">Level 16 feats</ion-select-option>
+                    <ion-select-option [value]="18">Level 18 feats</ion-select-option>
+                    <ion-select-option [value]="20">Level 20 feats</ion-select-option>
+                  </ion-select>
+                </ion-row>
+              </div>
+              <ion-searchbar (ionInput)="filterArray($event)" placeholder="Search... (traits, words)"></ion-searchbar>
               <ion-col offset-lg="2" offset-md="2" size-lg="8" size-md="8" size-sm="12" size-xs="12" *ngFor="let feat of class_feats">
                 <div><app-class-feat [feat]="feat"></app-class-feat></div>
               </ion-col>

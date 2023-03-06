@@ -19,6 +19,10 @@ export class ClassDetailsPage implements OnInit {
   subclasses: Subclass[] = [];
   subclass: number = 0;
   class_feats: Class_feat[]  = [];
+  complete_class_feats: Class_feat[] = [];
+  level_filtered_feats: Class_feat[] = [];
+  search_term = ''
+  feat_level = 0;
   constructor(private route: ActivatedRoute,
               private classService: ClassServiceService) { }
 
@@ -86,7 +90,8 @@ export class ClassDetailsPage implements OnInit {
       const {data: feats, error} = await this.classService.getClassFeats(this.idClass());
       if(feats){
         this.class_feats = feats;
-        console.log(this.class_feats);
+        this.complete_class_feats = feats;
+        this.level_filtered_feats = feats;
       }
       else if(error){
         console.log(error);
@@ -94,6 +99,32 @@ export class ClassDetailsPage implements OnInit {
     }
     catch (error){
       console.log(error);
+    }
+  }
+
+  filterArray(event: any) {
+    //Assigne la valeur à ce qui est indiqué dans l'event.
+    this.search_term = event.target.value;
+
+    //Si la valeur n'est pas vide (possibilité de la trim ou bien juste this.val)
+    if (this.search_term.trim() !== '') {
+      this.class_feats = this.level_filtered_feats.filter(feat =>
+        feat.name.toLowerCase().includes(this.search_term.toLowerCase())
+      );
+    }
+    else{
+      this.class_feats = this.level_filtered_feats;
+    }
+  }
+
+  filterByLevel(){
+    if(this.feat_level === 0){
+      this.level_filtered_feats = this.complete_class_feats;
+      this.class_feats = this.level_filtered_feats;
+    }
+    else{
+      this.level_filtered_feats = this.complete_class_feats.filter(feat => feat.level === this.feat_level);
+      this.class_feats = this.level_filtered_feats;
     }
   }
 }
