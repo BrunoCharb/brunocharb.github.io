@@ -85,13 +85,31 @@ export class ClassDetailsPage implements OnInit {
     }
   }
 
+  // public async getFeats(){
+  //   try {
+  //     const {data: feats, error} = await this.classService.getClassFeats(this.idClass());
+  //     if(feats){
+  //       this.class_feats = feats;
+  //       this.complete_class_feats = feats;
+  //       this.level_filtered_feats = feats;
+  //     }
+  //     else if(error){
+  //       console.log(error);
+  //     }
+  //   }
+  //   catch (error){
+  //     console.log(error);
+  //   }
+  // }
+
   public async getFeats(){
     try {
-      const {data: feats, error} = await this.classService.getClassFeats(this.idClass());
+      const {data: feats, error} = await this.classService.getFeatsWithTraits(this.current_class?.name);
       if(feats){
         this.class_feats = feats;
         this.complete_class_feats = feats;
         this.level_filtered_feats = feats;
+        console.log(feats);
       }
       else if(error){
         console.log(error);

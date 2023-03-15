@@ -1,7 +1,6 @@
 export interface Class_feat{
   id: number;
   name: string;
-  class: number;
   traits: string[];
   level: number;
   prerequisites: string;
