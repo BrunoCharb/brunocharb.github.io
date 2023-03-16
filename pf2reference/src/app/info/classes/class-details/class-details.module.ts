@@ -13,6 +13,7 @@ import {MagusSpellTableComponent} from '../../../spell-tables/magus-spell-table/
 import {PsychicSpellTableComponent} from '../../../spell-tables/psychic-spell-table/psychic-spell-table.component';
 import {ClericSpellTableComponent} from '../../../spell-tables/cleric-spell-table/cleric-spell-table.component';
 import {SummonerSpellTableComponent} from '../../../spell-tables/summoner-spell-table/summoner-spell-table.component';
+import {MonkUnarmedComponent} from '../../../tables/monk-unarmed/monk-unarmed.component';
 import {SharedModule} from '../../../shared/shared/shared.module';
 
 @NgModule({
@@ -21,7 +22,7 @@ import {SharedModule} from '../../../shared/shared/shared.module';
     FormsModule,
     IonicModule,
     ClassDetailsPageRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [ClassDetailsPage,
     CommonSpellTableComponent,
@@ -29,6 +30,7 @@ import {SharedModule} from '../../../shared/shared/shared.module';
     MagusSpellTableComponent,
     PsychicSpellTableComponent,
     ClericSpellTableComponent,
-    SummonerSpellTableComponent]
+    SummonerSpellTableComponent,
+    MonkUnarmedComponent]
 })
 export class ClassDetailsPageModule {}

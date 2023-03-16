@@ -164,6 +164,20 @@
               </ion-col>
             </ion-row>
             <ion-row>
+              <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" *ngIf="current_class?.name === 'Monk'">
+                <ion-row class="small-header">
+                  <h3 class="ion-margin-start">Monk Unarmed Attacks</h3>
+                </ion-row>
+                <p class="ion-margin-start">Some monk stances allow you to make special unarmed attacks while in those stances. These attacks are summarized here.</p>
+                <ion-card class="rounded">
+                  <ion-card-header class="card-header">
+                    <span>Monk Unarmed Attacks</span>
+                  </ion-card-header>
+                  <ion-card-content class="ion-no-padding">
+                    <app-monk-unarmed></app-monk-unarmed>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
               <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" *ngIf="current_class?.spells">
                 <ion-card class="rounded">
                   <ion-card-header class="card-header">
