@@ -123,6 +123,9 @@ import {SpellSubstitutionComponent} from '../../info/subclasses/wizard/spell-sub
 import {StaffNexusComponent} from '../../info/subclasses/wizard/staff-nexus/staff-nexus.component';
 import {ClassFeatComponent} from '../../info/feats/class-feat/class-feat.component';
 import {AlchemistFeaturesComponent} from '../../info/classes/class-features/alchemist-features/alchemist-features.component';
+import {
+  BarbarianFeaturesComponent
+} from '../../info/classes/class-features/barbarian-features/barbarian-features.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -246,7 +249,8 @@ import {AlchemistFeaturesComponent} from '../../info/classes/class-features/alch
   SpellSubstitutionComponent,
   StaffNexusComponent,
   ClassFeatComponent,
-  AlchemistFeaturesComponent],
+  AlchemistFeaturesComponent,
+  BarbarianFeaturesComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -372,6 +376,7 @@ import {AlchemistFeaturesComponent} from '../../info/classes/class-features/alch
     SpellSubstitutionComponent,
     StaffNexusComponent,
     ClassFeatComponent,
-    AlchemistFeaturesComponent]
+    AlchemistFeaturesComponent,
+  BarbarianFeaturesComponent]
 })
 export class SharedModule { }

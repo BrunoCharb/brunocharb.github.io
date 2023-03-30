@@ -208,6 +208,9 @@
             <ion-row *ngIf="current_class?.id === 1">
               <app-alchemist-features></app-alchemist-features>
             </ion-row>
+            <ion-row *ngIf="current_class?.id === 2">
+              <app-barbarian-features></app-barbarian-features>
+            </ion-row>
           </div>
 
           <div *ngSwitchCase="'subclass'">
