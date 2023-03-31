@@ -126,6 +126,16 @@ import {AlchemistFeaturesComponent} from '../../info/classes/class-features/alch
 import {
   BarbarianFeaturesComponent
 } from '../../info/classes/class-features/barbarian-features/barbarian-features.component';
+import {BardFeaturesComponent} from '../../info/classes/class-features/bard-features/bard-features.component';
+import {
+  ChampionFeaturesComponent
+} from '../../info/classes/class-features/champion-features/champion-features.component';
+import {ClericFeaturesComponent} from '../../info/classes/class-features/cleric-features/cleric-features.component';
+import {DruidFeaturesComponent} from '../../info/classes/class-features/druid-features/druid-features.component';
+import {FighterFeaturesComponent} from '../../info/classes/class-features/fighter-features/fighter-features.component';
+import {
+  GunslingerFeaturesComponent
+} from '../../info/classes/class-features/gunslinger-features/gunslinger-features.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -250,7 +260,13 @@ import {
   StaffNexusComponent,
   ClassFeatComponent,
   AlchemistFeaturesComponent,
-  BarbarianFeaturesComponent],
+  BarbarianFeaturesComponent,
+  BardFeaturesComponent,
+  ChampionFeaturesComponent,
+  ClericFeaturesComponent,
+  DruidFeaturesComponent,
+  FighterFeaturesComponent,
+  GunslingerFeaturesComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -377,6 +393,12 @@ import {
     StaffNexusComponent,
     ClassFeatComponent,
     AlchemistFeaturesComponent,
-  BarbarianFeaturesComponent]
+    BarbarianFeaturesComponent,
+    BardFeaturesComponent,
+    ChampionFeaturesComponent,
+    ClericFeaturesComponent,
+    DruidFeaturesComponent,
+    FighterFeaturesComponent,
+    GunslingerFeaturesComponent]
 })
 export class SharedModule { }

@@ -211,6 +211,24 @@
             <ion-row *ngIf="current_class?.id === 2">
               <app-barbarian-features></app-barbarian-features>
             </ion-row>
+            <ion-row *ngIf="current_class?.id === 3">
+              <app-bard-features></app-bard-features>
+            </ion-row>
+            <ion-row *ngIf="current_class?.id === 4">
+              <app-champion-features></app-champion-features>
+            </ion-row>
+            <ion-row *ngIf="current_class?.id === 5">
+              <app-cleric-features></app-cleric-features>
+            </ion-row>
+            <ion-row *ngIf="current_class?.id === 6">
+              <app-druid-features></app-druid-features>
+            </ion-row>
+            <ion-row *ngIf="current_class?.id === 7">
+              <app-fighter-features></app-fighter-features>
+            </ion-row>
+            <ion-row *ngIf="current_class?.id === 8">
+              <app-gunslinger-features></app-gunslinger-features>
+            </ion-row>
           </div>
 
           <div *ngSwitchCase="'subclass'">
