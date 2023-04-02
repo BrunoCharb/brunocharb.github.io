@@ -148,6 +148,20 @@ import {OracleFeaturesComponent} from '../../info/classes/class-features/oracle-
 import {PsychicFeaturesComponent} from '../../info/classes/class-features/psychic-features/psychic-features.component';
 import {RangerFeaturesComponent} from '../../info/classes/class-features/ranger-features/ranger-features.component';
 import {RogueFeaturesComponent} from '../../info/classes/class-features/rogue-features/rogue-features.component';
+import {
+  SorcererFeaturesComponent
+} from '../../info/classes/class-features/sorcerer-features/sorcerer-features.component';
+import {
+  SummonerFeaturesComponent
+} from '../../info/classes/class-features/summoner-features/summoner-features.component';
+import {
+  SwashbucklerFeaturesComponent
+} from '../../info/classes/class-features/swashbuckler-features/swashbuckler-features.component';
+import {
+  ThaumaturgeFeaturesComponent
+} from '../../info/classes/class-features/thaumaturge-features/thaumaturge-features.component';
+import {WitchFeaturesComponent} from '../../info/classes/class-features/witch-features/witch-features.component';
+import {WizardFeaturesComponent} from '../../info/classes/class-features/wizard-features/wizard-features.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -286,7 +300,13 @@ import {RogueFeaturesComponent} from '../../info/classes/class-features/rogue-fe
   OracleFeaturesComponent,
   PsychicFeaturesComponent,
   RangerFeaturesComponent,
-  RogueFeaturesComponent],
+  RogueFeaturesComponent,
+  SorcererFeaturesComponent,
+  SummonerFeaturesComponent,
+  SwashbucklerFeaturesComponent,
+  ThaumaturgeFeaturesComponent,
+  WitchFeaturesComponent,
+  WizardFeaturesComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -427,6 +447,12 @@ import {RogueFeaturesComponent} from '../../info/classes/class-features/rogue-fe
     OracleFeaturesComponent,
     PsychicFeaturesComponent,
     RangerFeaturesComponent,
-    RogueFeaturesComponent]
+    RogueFeaturesComponent,
+    SorcererFeaturesComponent,
+    SummonerFeaturesComponent,
+    SwashbucklerFeaturesComponent,
+    ThaumaturgeFeaturesComponent,
+    WitchFeaturesComponent,
+    WizardFeaturesComponent]
 })
 export class SharedModule { }
