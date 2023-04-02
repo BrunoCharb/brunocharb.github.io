@@ -136,6 +136,18 @@ import {FighterFeaturesComponent} from '../../info/classes/class-features/fighte
 import {
   GunslingerFeaturesComponent
 } from '../../info/classes/class-features/gunslinger-features/gunslinger-features.component';
+import {
+  InventorFeaturesComponent
+} from '../../info/classes/class-features/inventor-features/inventor-features.component';
+import {
+  InvestigatorFeaturesComponent
+} from '../../info/classes/class-features/investigator-features/investigator-features.component';
+import {MagusFeaturesComponent} from '../../info/classes/class-features/magus-features/magus-features.component';
+import {MonkFeaturesComponent} from '../../info/classes/class-features/monk-features/monk-features.component';
+import {OracleFeaturesComponent} from '../../info/classes/class-features/oracle-features/oracle-features.component';
+import {PsychicFeaturesComponent} from '../../info/classes/class-features/psychic-features/psychic-features.component';
+import {RangerFeaturesComponent} from '../../info/classes/class-features/ranger-features/ranger-features.component';
+import {RogueFeaturesComponent} from '../../info/classes/class-features/rogue-features/rogue-features.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -266,7 +278,15 @@ import {
   ClericFeaturesComponent,
   DruidFeaturesComponent,
   FighterFeaturesComponent,
-  GunslingerFeaturesComponent],
+  GunslingerFeaturesComponent,
+  InventorFeaturesComponent,
+  InvestigatorFeaturesComponent,
+  MagusFeaturesComponent,
+  MonkFeaturesComponent,
+  OracleFeaturesComponent,
+  PsychicFeaturesComponent,
+  RangerFeaturesComponent,
+  RogueFeaturesComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -399,6 +419,14 @@ import {
     ClericFeaturesComponent,
     DruidFeaturesComponent,
     FighterFeaturesComponent,
-    GunslingerFeaturesComponent]
+    GunslingerFeaturesComponent,
+    InventorFeaturesComponent,
+    InvestigatorFeaturesComponent,
+    MagusFeaturesComponent,
+    MonkFeaturesComponent,
+    OracleFeaturesComponent,
+    PsychicFeaturesComponent,
+    RangerFeaturesComponent,
+    RogueFeaturesComponent]
 })
 export class SharedModule { }

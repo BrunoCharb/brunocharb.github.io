@@ -17,20 +17,23 @@ import {MonkUnarmedComponent} from '../../../tables/monk-unarmed/monk-unarmed.co
 import {SharedModule} from '../../../shared/shared/shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ClassDetailsPageRoutingModule,
-    SharedModule,
-  ],
-  declarations: [ClassDetailsPage,
-    CommonSpellTableComponent,
-    SorcererSpellTableComponent,
-    MagusSpellTableComponent,
-    PsychicSpellTableComponent,
-    ClericSpellTableComponent,
-    SummonerSpellTableComponent,
-    MonkUnarmedComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ClassDetailsPageRoutingModule,
+        SharedModule,
+    ],
+    exports: [
+        SummonerSpellTableComponent
+    ],
+    declarations: [ClassDetailsPage,
+        CommonSpellTableComponent,
+        SorcererSpellTableComponent,
+        MagusSpellTableComponent,
+        PsychicSpellTableComponent,
+        ClericSpellTableComponent,
+        SummonerSpellTableComponent,
+        MonkUnarmedComponent]
 })
 export class ClassDetailsPageModule {}
