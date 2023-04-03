@@ -162,6 +162,19 @@ import {
 } from '../../info/classes/class-features/thaumaturge-features/thaumaturge-features.component';
 import {WitchFeaturesComponent} from '../../info/classes/class-features/witch-features/witch-features.component';
 import {WizardFeaturesComponent} from '../../info/classes/class-features/wizard-features/wizard-features.component';
+import {AngelEidolonComponent} from '../../info/companions/eidolons/angel-eidolon/angel-eidolon.component';
+import {AngerEidolonComponent} from '../../info/companions/eidolons/anger-eidolon/anger-eidolon.component';
+import {BeastEidolonComponent} from '../../info/companions/eidolons/beast-eidolon/beast-eidolon.component';
+import {ConstructEidolonComponent} from '../../info/companions/eidolons/construct-eidolon/construct-eidolon.component';
+import {DemonEidolonComponent} from '../../info/companions/eidolons/demon-eidolon/demon-eidolon.component';
+import {DevotionEidolonComponent} from '../../info/companions/eidolons/devotion-eidolon/devotion-eidolon.component';
+import {DragonEidolonComponent} from '../../info/companions/eidolons/dragon-eidolon/dragon-eidolon.component';
+import {FeyEidolonComponent} from '../../info/companions/eidolons/fey-eidolon/fey-eidolon.component';
+import {PlantEidolonComponent} from '../../info/companions/eidolons/plant-eidolon/plant-eidolon.component';
+import {
+  PsychopompEidolonComponent
+} from '../../info/companions/eidolons/psychopomp-eidolon/psychopomp-eidolon.component';
+import {UndeadEidolonComponent} from '../../info/companions/eidolons/undead-eidolon/undead-eidolon.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -306,7 +319,18 @@ import {WizardFeaturesComponent} from '../../info/classes/class-features/wizard-
   SwashbucklerFeaturesComponent,
   ThaumaturgeFeaturesComponent,
   WitchFeaturesComponent,
-  WizardFeaturesComponent],
+  WizardFeaturesComponent,
+  AngelEidolonComponent,
+  AngerEidolonComponent,
+  BeastEidolonComponent,
+  ConstructEidolonComponent,
+  DemonEidolonComponent,
+  DevotionEidolonComponent,
+  DragonEidolonComponent,
+  FeyEidolonComponent,
+  PlantEidolonComponent,
+  PsychopompEidolonComponent,
+  UndeadEidolonComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -453,6 +477,17 @@ import {WizardFeaturesComponent} from '../../info/classes/class-features/wizard-
     SwashbucklerFeaturesComponent,
     ThaumaturgeFeaturesComponent,
     WitchFeaturesComponent,
-    WizardFeaturesComponent]
+    WizardFeaturesComponent,
+    AngelEidolonComponent,
+    AngerEidolonComponent,
+    BeastEidolonComponent,
+    ConstructEidolonComponent,
+    DemonEidolonComponent,
+    DevotionEidolonComponent,
+    DragonEidolonComponent,
+    FeyEidolonComponent,
+    PlantEidolonComponent,
+    PsychopompEidolonComponent,
+    UndeadEidolonComponent]
 })
 export class SharedModule { }

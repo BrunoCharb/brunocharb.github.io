@@ -18,6 +18,7 @@ export class ClassDetailsPage implements OnInit {
   progression: Progress_table[] = [];
   subclasses: Subclass[] = [];
   subclass: number = 0;
+  eidolon: string = 'none';
   class_feats: Class_feat[]  = [];
   complete_class_feats: Class_feat[] = [];
   level_filtered_feats: Class_feat[] = [];

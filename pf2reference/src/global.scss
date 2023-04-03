@@ -99,3 +99,11 @@ ion-menu-button {
   font-weight: bolder;
 }
 
+.separator:after {
+  margin-top: 0.2em;
+  margin-left: -2em;
+  border-bottom: 0.05em solid black;
+  content: '';
+  display: block;
+  width: 100%;
+}

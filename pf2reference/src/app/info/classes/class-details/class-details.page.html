@@ -23,6 +23,7 @@
                               *ngIf="current_class?.id !== 7 && current_class?.id !== 12 && current_class?.id !== 18">
             {{current_class?.subclass_name}}
           </ion-segment-button>
+          <ion-segment-button value="eidolons" *ngIf="current_class?.id ===18">Eidolons</ion-segment-button>
           <ion-segment-button value="classfeats">
             {{current_class?.name}} Feats
           </ion-segment-button>
@@ -278,7 +279,7 @@
               <h2 class="ion-margin-start">{{current_class?.subclass_name}}</h2>
             </ion-row>
             <ion-row>
-              <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
+              <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5" size-xl="5">
                 <div>
                   <ion-row class="ion-justify-content-center">
                     <ion-select [(ngModel)]="subclass" class="select-style">
@@ -649,7 +650,7 @@
                   <app-staff-nexus></app-staff-nexus>
                 </div>
               </ion-col>
-              <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
+              <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6" offset-md="1" offset-lg="1" offset-xl="1">
                 <div class="ion-text-center">
                   <h2>General information</h2>
                 </div>
@@ -1012,6 +1013,131 @@
             <p class="ion-margin-start">As a transmuter, you alter the physical properties of things, transforming creatures, objects, the natural world, and even yourself at your whim. You understand that change is inevitable. You add one 1st-level transmutation spell (such as magic weapon) to your spellbook. You learn the physical boost school spell.</p>
             <h3 class="ion-margin-start">Universalist</h3>
             <p class="ion-margin-start">Instead of specializing narrowly in an arcane school, you can become a universalist wizard—by studying all the schools equally, you devote yourself to understanding the full breadth of the arcane arts. For each level of wizard spell slots you have, you can use Drain Bonded Item once per day to recall a spell of that level (instead of using it only once per day in total). You gain an extra wizard class feat, and you add one 1st-level spell of your choice to your spellbook.</p>
+          </div>
+
+          <div *ngSwitchCase="'eidolons'">
+            <ion-row class="small-header ion-margin-top">
+              <h2 class="ion-margin-start">Eidolons</h2>
+            </ion-row>
+            <ion-row>
+              <p>Though each eidolon is a unique creature and there are many types of eidolons, each draws upon a particular tradition of magic and manifests from related essence. Multiple types of each eidolon exist as well—for instance, the types of construct eidolon presented in this book are the warrior construct and the scout construct.</p>
+              <p> Arcane eidolons are usually formed of mental essence, also known as astral essence. They include dragon eidolons—the echoes of ancient dragons— and construct eidolons, beings formed into a simple construct shape through arcane magic.</p>
+              <p> Divine eidolons are always formed of spiritual essence, much like the divine servitors they resemble. They include representatives of the many families of divine servitors, such as angels, demons, and psychopomps.</p>
+              <p> Occult eidolons are also usually formed of spiritual essence, though they tend toward a more ectoplasmic consistency than divine eidolons. Occult eidolons usually form from the essence of a spirit that is unwilling or unable to pass on, and find refuge with a summoner to avoid becoming undead; these types of eidolons are known as phantoms. Each phantom eidolon has a connection to a particular emotion, such as the anger phantom and devotion phantom described in this book.</p>
+              <p> Primal eidolons usually manifest from life essence. Their forms resemble creatures found in the natural world, such as beasts, plants, fey, or some combination.</p>
+            </ion-row>
+            <ion-row>
+              <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="5" size-xl="5">
+                <div>
+                  <ion-row class="ion-justify-content-center">
+                    <ion-select [(ngModel)]="eidolon" class="select-style">
+                      <ion-select-option [value]="'none'">Select an Eidolon</ion-select-option>
+                      <ion-select-option value="angel">Angel Eidolon</ion-select-option>
+                      <ion-select-option value="anger">Anger Phantom Eidolon</ion-select-option>
+                      <ion-select-option value="beast">Beast Eidolon</ion-select-option>
+                      <ion-select-option value="construct">Construct Eidolon</ion-select-option>
+                      <ion-select-option value="demon">Demon Eidolon</ion-select-option>
+                      <ion-select-option value="devotion">Devotion Phantom Eidolon</ion-select-option>
+                      <ion-select-option value="dragon">Dragon Eidolon</ion-select-option>
+                      <ion-select-option value="fey">Fey Eidolon</ion-select-option>
+                      <ion-select-option value="plant">Plant Eidolon</ion-select-option>
+                      <ion-select-option value="psychopomp">Psychopomp Eidolon</ion-select-option>
+                      <ion-select-option value="undead">Undead Eidolon</ion-select-option>
+                    </ion-select>
+                  </ion-row>
+                </div>
+                <div>
+                  <div *ngIf="eidolon === 'angel'">
+                    <app-angel-eidolon></app-angel-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'anger'">
+                    <app-anger-eidolon></app-anger-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'beast'">
+                    <app-beast-eidolon></app-beast-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'construct'">
+                    <app-construct-eidolon></app-construct-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'demon'">
+                    <app-demon-eidolon></app-demon-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'devotion'">
+                    <app-devotion-eidolon></app-devotion-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'dragon'">
+                    <app-dragon-eidolon></app-dragon-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'fey'">
+                    <app-fey-eidolon></app-fey-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'plant'">
+                    <app-plant-eidolon></app-plant-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'psychopomp'">
+                    <app-psychopomp-eidolon></app-psychopomp-eidolon>
+                  </div>
+                  <div *ngIf="eidolon === 'undead'">
+                    <app-undead-eidolon></app-undead-eidolon>
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6" offset-md="1" offset-lg="1" offset-xl="1">
+                <ion-row class="small-header ion-margin-top">
+                  <h2 class="ion-margin-start">Proficiencies</h2>
+                </ion-row>
+                <p>Your eidolon's level is equal to yours. It begins with expert proficiency in Fortitude and Will saves and trained proficiency in Reflex saves. In addition, it is trained in unarmed attacks and unarmored defense. It shares your skill proficiencies. Certain class features increase your eidolon's proficiencies.</p>
+                <ion-row class="small-header ion-margin-top">
+                  <h2 class="ion-margin-start">Ability Scores</h2>
+                </ion-row>
+                <p>An eidolon's ability scores depend on which array you choose, such as marauding dragon or cunning dragon for a dragon eidolon. As noted in the summoner's ability boosts class feature, your eidolon gets boosts to its ability scores at the same time you do. It also increases one score by 2 when it gains its transcendence ability.</p>
+                <ion-row class="small-header ion-margin-top">
+                  <h2 class="ion-margin-start">Unarmed Attacks</h2>
+                </ion-row>
+                <p>Your eidolon starts with two unarmed attacks. Each eidolon entry suggests some forms the eidolon's attacks might take, but since eidolons can have a variety of body shapes, you decide the specific form of the unarmed attacks (claw, jaws, horn, fist, and so on) when you choose your eidolon. Some eidolons' unarmed attacks might look like swords, clubs, or other weapons, even though they are extensions of the eidolon's form. Your choice of unarmed attack determines its damage type— bludgeoning, piercing, or slashing, as appropriate. Some of the suggested attacks list a typical damage type in parentheses, but you can work with your GM to choose a damage type that is right for your eidolon. Once you decide upon your eidolon's unarmed attacks, they can't be changed except via abilities that specifically change them, except with your GM's permission. Your eidolon has a primary and secondary unarmed attack.</p>
+                <p><strong>Primary Attack: </strong>Choose from the following statistics for the more flexible primary attack.</p>
+                <ul>
+                  <li>1d8 damage (disarm, nonlethal, shove, or trip)</li>
+                  <li>1d6 damage (fatal d10)</li>
+                  <li>1d6 damage (forceful and sweep)</li>
+                  <li>1d6 damage (deadly d8 and finesse)</li>
+                </ul>
+                <p><strong>Secondary Attack: </strong>The secondary attack always deals 1d6 damage and has the agile and finesse traits.</p>
+                <ion-row class="small-header ion-margin-top">
+                  <h2 class="ion-margin-start">Eidolon Spells</h2>
+                </ion-row>
+                <p>An eidolon normally can't Cast a Spell; however, some feats or abilities can grant it this capability. An eidolon that has spells also gains the Cast a Spell activity. It doesn't have its own spell DC or spell attack modifier; if it needs to Cast a Spell, it uses your spell DC and spell attack modifier. If you have eidolon link spells, your eidolon shares your focus pool to cast them, though it can't Refocus. Your eidolon can cast only spells that it gains from its own abilities. It can't cast your spells, nor can you cast spells it has.</p>
+                <ion-row class="small-header ion-margin-top">
+                  <h2 class="ion-margin-start">Reading an Eidolon Entry</h2>
+                </ion-row>
+                <p>An eidolon entry contains the following information, followed by a description of the eidolon's initial ability and abilities gained from the eidolon symbiosis and eidolon transcendence class features.</p>
+                <p><strong>Tradition: </strong>This is the eidolon's corresponding magical tradition, which determines the type of magic you can cast.</p>
+                <p><strong>Traits: </strong>All eidolons have the eidolon trait, and each type of eidolon has additional traits. They all appear in this entry.</p>
+                <p><strong>Alignment: </strong>You choose your eidolon's alignment, abiding by any alignment restrictions listed here. Your eidolon's alignment has no impact on your own.</p>
+                <p><strong>Home Plane: </strong>This is the eidolon's home plane, where it goes when unmanifested. This can help you determine the effects of abilities dependent on a creature's home plane, such as banishment.</p>
+                <p class="separator"></p>
+                <p><strong>Size: </strong>This is the eidolon's starting Size.</p>
+                <p><strong>Suggested Attacks: </strong>This entry suggests forms that the eidolon's attacks might take (see Unarmed Attacks above).</p>
+                <p><strong>Eidolon Array: </strong>Choose from one of two arrays for your eidolon. This choice sets its ability scores, as well as the form of its defenses, as represented by an item bonus to AC and its Dexterity cap. For instance, a demon eidolon can have the wrecker array, with a higher Strength and item bonus to AC, or be a tempter, with a higher Charisma and Dexterity cap. The appearance of the eidolon's protection can be anything you choose that fits the eidolon: armor, scales, tough hide, a mystical aura of deflection, and so on. Though each eidolon has two arrays in this book, it's possible for other varieties to appear elsewhere. </p>
+                <p><strong>Skills: </strong>These are the skills that the eidolon has taught you, or that you learned as part of linking with your eidolon. You are trained in these skills, and the eidolon shares this proficiency as normal for its skills.</p>
+                <p><strong>Senses: </strong>This entry, if present, lists your eidolon's special senses. If this entry is not present, the eidolon has senses like a human's.</p>
+                <p><strong>Language: </strong>This is the eidolon's starting language. You know this language, in addition to the other languages you know normally. Your eidolon doesn't gain any additional languages based on its Intelligence modifier, but it can speak all the same languages you can.</p>
+                <p><strong>Speed: </strong>This entry lists your eidolon's Speeds.</p>
+                <p class="separator"></p>
+                <p><strong>Eidolon Abilities: </strong>The eidolon starts with an initial ability, gains the symbiosis ability when you gain the eidolon symbiosis class feature, and gains the transcendence ability when you gain the eidolon transcendence class feature.</p>
+                <ion-row class="key-term">
+                  <div class="ion-margin-horizontal">
+                    <h2>Gear and your Eidolon</h2>
+                    <p>Your eidolon can't wear or use magic items, except for items with the eidolon trait. An eidolon can have up to two items invested. Your eidolon's link to you means it can benefit from certain magic items invested by you. </p>
+                    <ul>
+                      <li>Your eidolon gains item bonuses to Perception and skills from any magical items that you have invested.</li>
+                      <li>Your eidolon increases its item bonus to AC based on your armor's armor potency rune or bracers of armor. It also gains an item bonus to its saves from the resilient rune on your armor or from your bracers of armor. Other permanent items that grant or increase item bonuses to AC and saves might convey a similar benefit, as determined by the GM.</li>
+                      <li>Your eidolon's Strikes benefit from the fundamental and property runes on your handwraps of mighty blows. Alternatively, you can Invest a magic weapon (even though magic weapons can't normally be Invested) to share its fundamental and property runes with your eidolon. You share these benefits only while you're holding the weapon, and you can have no more than one weapon invested in this way at a time. In either case, the eidolon gains only the benefits that can apply to its attacks, with the same limitations noted in handwraps of mighty blows.</li>
+                    </ul>
+                  </div>
+                </ion-row>
+              </ion-col>
+            </ion-row>
           </div>
         </div>
 
