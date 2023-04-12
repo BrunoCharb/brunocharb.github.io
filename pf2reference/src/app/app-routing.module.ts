@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'class-details/:id',
     loadChildren: () => import('./info/classes/class-details/class-details.module').then(m => m.ClassDetailsPageModule)
+  },
+  {
+    path: 'ancestries',
+    loadChildren: () => import('./info/ancestries/ancestries/ancestries.module').then( m => m.AncestriesPageModule)
+  },
+  {
+    path: 'ancestry-details/:id',
+    loadChildren: () => import('./info/ancestries/ancestry-details/ancestry-details.module').then( m => m.AncestryDetailsPageModule)
   }
 ];
 
