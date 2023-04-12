@@ -21,4 +21,6 @@ export interface Ancestries{
   extras: string;
   extra_move: string[];
   card_text: string;
+  is_heritage: boolean;
+  heritage_text: string;
 }

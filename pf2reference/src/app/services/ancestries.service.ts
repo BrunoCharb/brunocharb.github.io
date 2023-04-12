@@ -12,7 +12,7 @@ export class AncestriesService {
   constructor(private supaService: SupabaseService) { }
 
   public async getAllAncestries(): Promise<PostgrestResponse<Ancestries>> {
-    return this.supaService.supabaseClient.from('ancestries').select('*').order('name');
+    return this.supaService.supabaseClient.from('ancestries').select('*').eq('is_heritage', false).order('name');
   }
 
   public async getAncestryByID(id: string): Promise<PostgrestSingleResponse<Ancestries>>{
