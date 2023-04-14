@@ -73,6 +73,30 @@
             </ion-row>
             <h4 class="ion-margin-start">{{currentHeritage?.name}}</h4>
             <p class="ion-margin-start" [innerHtml]="currentHeritage?.heritage_text"></p>
+            <div *ngIf="currentHeritage?.id === 49">
+              <ion-card class="rounded">
+                <ion-card-content>
+                  <h2>Change Shape <img src="/assets/images/actions/single.png" height="25px" width="25px"
+                                            style="margin-bottom: -5px"></h2>
+                  <p class="separator"></p>
+                  <div class="badge-like">
+                    Concentrate
+                  </div>
+                  <div class="badge-like">
+                    Polymorph
+                  </div>
+                  <div class="badge-like">
+                    Primal
+                  </div>
+                  <div class="badge-like">
+                    Transmutation
+                  </div>
+                  <p class="separator"></p>
+                  <p>You change into your humanoid or hybrid shape. Each shape has a specific, persistent appearance, and most beastkin remain in their hybrid shapes by default. In hybrid shape, you appear as a mix between your ancestry and your inherent animal. While in hybrid shape, you gain a jaws unarmed Strike resembling the features of your inherent animal (fangs for bats, beaks for eagles, mandibles for wasps, and so on). Your jaws deal 1d4 piercing damage, have the agile, finesse, and unarmed traits, and are in the brawling weapon group. In your humanoid shape, you retain the appearance of your original ancestry. </p>
+                  <p class="separator"></p>
+                </ion-card-content>
+              </ion-card>
+            </div>
           </ion-col>
         </ion-row>
       </ion-col>
