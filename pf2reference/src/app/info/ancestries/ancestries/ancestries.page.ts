@@ -8,12 +8,15 @@ import {AncestriesService} from '../../../services/ancestries.service';
   styleUrls: ['./ancestries.page.scss'],
 })
 export class AncestriesPage implements OnInit {
+  segment = 'ancestries';
 
   ancestryList: Ancestries[] = [];
+  heritageList: Ancestries[] = [];
   constructor( private ancestryService: AncestriesService) { }
 
   async ionViewWillEnter() {
     await this.getAllAncestries();
+    await this.getAllHeritages();
   }
   ngOnInit() {
   }
@@ -23,7 +26,21 @@ export class AncestriesPage implements OnInit {
       const {data, error} = await this.ancestryService.getAllAncestries();
       if (data){
         this.ancestryList = data;
-        console.log(this.ancestryList);
+      }
+      else {
+        console.log(error.message);
+      }
+    }
+    catch (error){
+      console.log(error);
+    }
+  }
+
+  public async getAllHeritages(){
+    try {
+      const {data, error} = await this.ancestryService.getAllHeritages();
+      if (data){
+        this.heritageList = data;
       }
       else {
         console.log(error.message);

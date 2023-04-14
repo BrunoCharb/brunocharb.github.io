@@ -10,15 +10,39 @@
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xl="10">
-        <ion-grid>
-          <ion-row>
-            <ion-col size-lg="4" size-md="6" size-sm="12" size-xs="12" *ngFor="let ancestry of ancestryList">
-              <div>
-                <app-ancestry-card [ancestry]="ancestry"></app-ancestry-card>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-segment [(ngModel)]="segment" class="ion-hide-md-down">
+          <ion-segment-button value="ancestries">
+            Ancestries
+          </ion-segment-button>
+          <ion-segment-button value="heritages">
+            Versatile Heritages
+          </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+          <div *ngSwitchCase="'ancestries'">
+            <ion-grid>
+              <ion-row>
+                <ion-col size-lg="4" size-md="6" size-sm="12" size-xs="12" *ngFor="let ancestry of ancestryList">
+                  <div>
+                    <app-ancestry-card [ancestry]="ancestry"></app-ancestry-card>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div *ngSwitchCase="'heritages'">
+            <ion-grid>
+              <ion-row>
+                <ion-col size-lg="4" size-md="6" size-sm="12" size-xs="12" *ngFor="let heritage of heritageList">
+                  <div>
+                    <app-heritage-card [heritage]="heritage"></app-heritage-card>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

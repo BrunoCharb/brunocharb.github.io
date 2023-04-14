@@ -8,6 +8,7 @@ import { AncestriesPageRoutingModule } from './ancestries-routing.module';
 
 import { AncestriesPage } from './ancestries.page';
 import {AncestryCardComponent} from '../../../cards/ancestry-card/ancestry-card.component';
+import {HeritageCardComponent} from '../../../cards/heritage-card/heritage-card.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import {AncestryCardComponent} from '../../../cards/ancestry-card/ancestry-card.
     IonicModule,
     AncestriesPageRoutingModule
   ],
-  declarations: [AncestriesPage, AncestryCardComponent]
+    declarations: [AncestriesPage, AncestryCardComponent, HeritageCardComponent]
 })
 export class AncestriesPageModule {}

@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'ancestry-details/:id',
     loadChildren: () => import('./info/ancestries/ancestry-details/ancestry-details.module').then( m => m.AncestryDetailsPageModule)
+  },
+  {
+    path: 'heritage-details/:id',
+    loadChildren: () => import('./info/ancestries/heritage-details/heritage-details.module').then( m => m.HeritageDetailsPageModule)
   }
 ];
 

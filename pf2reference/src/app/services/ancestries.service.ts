@@ -15,6 +15,10 @@ export class AncestriesService {
     return this.supaService.supabaseClient.from('ancestries').select('*').eq('is_heritage', false).order('name');
   }
 
+  public async getAllHeritages(): Promise<PostgrestResponse<Ancestries>> {
+    return this.supaService.supabaseClient.from('ancestries').select('*').eq('is_heritage', true).order('name');
+  }
+
   public async getAncestryByID(id: string): Promise<PostgrestSingleResponse<Ancestries>>{
     return this.supaService.supabaseClient.from('ancestries').select('*').eq('id', id).single();
   }

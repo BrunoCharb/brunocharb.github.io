@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="light-text">{{currentHeritage?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="ion-text-center">Details for the {{currentHeritage?.name}} versatile heritage</h1>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xl="10">
+        <ion-row>
+          <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+            <ion-row class="ion-text-center">
+              <img src="/assets/images/ancestries/{{currentHeritage?.name}}desc.png"
+                   alt="Class example character"/>
+            </ion-row>
+          </ion-col>
+          <ion-col size-xl="6" size-lg="6" size-md="12" size-sm="12" size-xs="12">
+            <ion-row class="small-header">
+              <h2 class="ion-margin-start">General Details</h2>
+            </ion-row>
+            <p class="ion-margin-start" [innerHtml]="currentHeritage?.summary"></p>
+            <ion-row class="small-header">
+              <h3 class="ion-margin-start">You Might...</h3>
+            </ion-row>
+            <ul>
+              <li *ngFor="let item of currentHeritage?.youmight">{{item}}</li>
+            </ul>
+            <ion-row class="small-header">
+              <h3 class="ion-margin-start">Others Probably...</h3>
+            </ion-row>
+            <ul>
+              <li *ngFor="let item of currentHeritage?.others">{{item}}</li>
+            </ul>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div *ngIf="currentHeritage?.physical">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Physical Description</h3>
+              </ion-row>
+              <p class="ion-margin-start" [innerHtml]="currentHeritage?.physical"></p>
+            </div>
+            <div *ngIf="currentHeritage?.society">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Society</h3>
+              </ion-row>
+              <p class="ion-margin-start" [innerHtml]="currentHeritage?.society"></p>
+            </div>
+            <div *ngIf="currentHeritage?.moral">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Alignment and Religion</h3>
+              </ion-row>
+              <p class="ion-margin-start" [innerHtml]="currentHeritage?.moral"></p>
+            </div>
+            <div *ngIf="currentHeritage?.adventurers">
+              <ion-row class="small-header">
+                <h3 class="ion-margin-start">Adventurers</h3>
+              </ion-row>
+              <p class="ion-margin-start" [innerHtml]="currentHeritage?.adventurers"></p>
+            </div>
+            <ion-row class="small-header">
+              <h3 class="ion-margin-start">Other Information</h3>
+            </ion-row>
+            <div class="ion-margin-start" [innerHtml]="currentHeritage?.extras"></div>
+            <ion-row class="small-header">
+              <h3 class="ion-margin-start">Versatile Heritage</h3>
+            </ion-row>
+            <h4 class="ion-margin-start">{{currentHeritage?.name}}</h4>
+            <p class="ion-margin-start" [innerHtml]="currentHeritage?.heritage_text"></p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
