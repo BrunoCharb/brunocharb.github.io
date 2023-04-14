@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./info/classes/class-details/class-details.module').then(m => m.ClassDetailsPageModule)
   },
   {
-    path: 'ancestries',
+    path: 'ancestries/:segment',
     loadChildren: () => import('./info/ancestries/ancestries/ancestries.module').then( m => m.AncestriesPageModule)
   },
   {

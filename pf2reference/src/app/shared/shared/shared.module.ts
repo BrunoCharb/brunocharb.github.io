@@ -175,6 +175,62 @@ import {
   PsychopompEidolonComponent
 } from '../../info/companions/eidolons/psychopomp-eidolon/psychopomp-eidolon.component';
 import {UndeadEidolonComponent} from '../../info/companions/eidolons/undead-eidolon/undead-eidolon.component';
+import {AnadiHeritagesComponent} from '../../info/ancestries/heritages/anadi-heritages/anadi-heritages.component';
+import {AndroidHeritagesComponent} from '../../info/ancestries/heritages/android-heritages/android-heritages.component';
+import {
+  AutomatonHeritagesComponent
+} from '../../info/ancestries/heritages/automaton-heritages/automaton-heritages.component';
+import {
+  AzarketiHeritagesComponent
+} from '../../info/ancestries/heritages/azarketi-heritages/azarketi-heritages.component';
+import {CatfolkHeritagesComponent} from '../../info/ancestries/heritages/catfolk-heritages/catfolk-heritages.component';
+import {ConrasuHeritagesComponent} from '../../info/ancestries/heritages/conrasu-heritages/conrasu-heritages.component';
+import {DwarfHeritagesComponent} from '../../info/ancestries/heritages/dwarf-heritages/dwarf-heritages.component';
+import {ElfHeritagesComponent} from '../../info/ancestries/heritages/elf-heritages/elf-heritages.component';
+import {
+  FetchlingHeritagesComponent
+} from '../../info/ancestries/heritages/fetchling-heritages/fetchling-heritages.component';
+import {
+  FleshwarpHeritagesComponent
+} from '../../info/ancestries/heritages/fleshwarp-heritages/fleshwarp-heritages.component';
+import {GhoranHeritagesComponent} from '../../info/ancestries/heritages/ghoran-heritages/ghoran-heritages.component';
+import {GnollHeritagesComponent} from '../../info/ancestries/heritages/gnoll-heritages/gnoll-heritages.component';
+import {GnomeHeritagesComponent} from '../../info/ancestries/heritages/gnome-heritages/gnome-heritages.component';
+import {GoblinHeritagesComponent} from '../../info/ancestries/heritages/goblin-heritages/goblin-heritages.component';
+import {GolomaHeritagesComponent} from '../../info/ancestries/heritages/goloma-heritages/goloma-heritages.component';
+import {GrippliHeritagesComponent} from '../../info/ancestries/heritages/grippli-heritages/grippli-heritages.component';
+import {
+  HalflingHeritagesComponent
+} from '../../info/ancestries/heritages/halfling-heritages/halfling-heritages.component';
+import {
+  HobgoblinHeritagesComponent
+} from '../../info/ancestries/heritages/hobgoblin-heritages/hobgoblin-heritages.component';
+import {HumanHeritagesComponent} from '../../info/ancestries/heritages/human-heritages/human-heritages.component';
+import {
+  KashrishiHeritagesComponent
+} from '../../info/ancestries/heritages/kashrishi-heritages/kashrishi-heritages.component';
+import {KitsuneHeritagesComponent} from '../../info/ancestries/heritages/kitsune-heritages/kitsune-heritages.component';
+import {KoboldHeritagesComponent} from '../../info/ancestries/heritages/kobold-heritages/kobold-heritages.component';
+import {LeshyHeritagesComponent} from '../../info/ancestries/heritages/leshy-heritages/leshy-heritages.component';
+import {
+  LizardfolkHeritagesComponent
+} from '../../info/ancestries/heritages/lizardfolk-heritages/lizardfolk-heritages.component';
+import {NagajiHeritagesComponent} from '../../info/ancestries/heritages/nagaji-heritages/nagaji-heritages.component';
+import {OrcHeritagesComponent} from '../../info/ancestries/heritages/orc-heritages/orc-heritages.component';
+import {PoppetHeritagesComponent} from '../../info/ancestries/heritages/poppet-heritages/poppet-heritages.component';
+import {RatfolkHeritagesComponent} from '../../info/ancestries/heritages/ratfolk-heritages/ratfolk-heritages.component';
+import {ShiskHeritagesComponent} from '../../info/ancestries/heritages/shisk-heritages/shisk-heritages.component';
+import {ShoonyHeritagesComponent} from '../../info/ancestries/heritages/shoony-heritages/shoony-heritages.component';
+import {
+  SkeletonHeritagesComponent
+} from '../../info/ancestries/heritages/skeleton-heritages/skeleton-heritages.component';
+import {SpriteHeritagesComponent} from '../../info/ancestries/heritages/sprite-heritages/sprite-heritages.component';
+import {StrixHeritagesComponent} from '../../info/ancestries/heritages/strix-heritages/strix-heritages.component';
+import {TenguHeritagesComponent} from '../../info/ancestries/heritages/tengu-heritages/tengu-heritages.component';
+import {VanaraHeritagesComponent} from '../../info/ancestries/heritages/vanara-heritages/vanara-heritages.component';
+import {
+  VishkanyaHeritagesComponent
+} from '../../info/ancestries/heritages/vishkanya-heritages/vishkanya-heritages.component';
 
 @NgModule({
   declarations: [BomberComponent,
@@ -330,7 +386,43 @@ import {UndeadEidolonComponent} from '../../info/companions/eidolons/undead-eido
   FeyEidolonComponent,
   PlantEidolonComponent,
   PsychopompEidolonComponent,
-  UndeadEidolonComponent],
+  UndeadEidolonComponent,
+  AnadiHeritagesComponent,
+  AndroidHeritagesComponent,
+  AutomatonHeritagesComponent,
+  AzarketiHeritagesComponent,
+  CatfolkHeritagesComponent,
+  ConrasuHeritagesComponent,
+  DwarfHeritagesComponent,
+  ElfHeritagesComponent,
+  FetchlingHeritagesComponent,
+  FleshwarpHeritagesComponent,
+  GhoranHeritagesComponent,
+  GnollHeritagesComponent,
+  GnomeHeritagesComponent,
+  GoblinHeritagesComponent,
+  GolomaHeritagesComponent,
+  GrippliHeritagesComponent,
+  HalflingHeritagesComponent,
+  HobgoblinHeritagesComponent,
+  HumanHeritagesComponent,
+  KashrishiHeritagesComponent,
+  KitsuneHeritagesComponent,
+  KoboldHeritagesComponent,
+  LeshyHeritagesComponent,
+  LizardfolkHeritagesComponent,
+  NagajiHeritagesComponent,
+  OrcHeritagesComponent,
+  PoppetHeritagesComponent,
+  RatfolkHeritagesComponent,
+  ShiskHeritagesComponent,
+  ShoonyHeritagesComponent,
+  SkeletonHeritagesComponent,
+  SpriteHeritagesComponent,
+  StrixHeritagesComponent,
+  TenguHeritagesComponent,
+  VanaraHeritagesComponent,
+  VishkanyaHeritagesComponent],
   imports: [
     CommonModule,
     IonicModule
@@ -488,6 +580,42 @@ import {UndeadEidolonComponent} from '../../info/companions/eidolons/undead-eido
     FeyEidolonComponent,
     PlantEidolonComponent,
     PsychopompEidolonComponent,
-    UndeadEidolonComponent]
+    UndeadEidolonComponent,
+    AnadiHeritagesComponent,
+    AndroidHeritagesComponent,
+    AutomatonHeritagesComponent,
+    AzarketiHeritagesComponent,
+    CatfolkHeritagesComponent,
+    ConrasuHeritagesComponent,
+    DwarfHeritagesComponent,
+    ElfHeritagesComponent,
+    FetchlingHeritagesComponent,
+    FleshwarpHeritagesComponent,
+    GhoranHeritagesComponent,
+    GnollHeritagesComponent,
+    GnomeHeritagesComponent,
+    GoblinHeritagesComponent,
+    GolomaHeritagesComponent,
+    GrippliHeritagesComponent,
+    HalflingHeritagesComponent,
+    HobgoblinHeritagesComponent,
+    HumanHeritagesComponent,
+    KashrishiHeritagesComponent,
+    KitsuneHeritagesComponent,
+    KoboldHeritagesComponent,
+    LeshyHeritagesComponent,
+    LizardfolkHeritagesComponent,
+    NagajiHeritagesComponent,
+    OrcHeritagesComponent,
+    PoppetHeritagesComponent,
+    RatfolkHeritagesComponent,
+    ShiskHeritagesComponent,
+    ShoonyHeritagesComponent,
+    SkeletonHeritagesComponent,
+    SpriteHeritagesComponent,
+    StrixHeritagesComponent,
+    TenguHeritagesComponent,
+    VanaraHeritagesComponent,
+    VishkanyaHeritagesComponent]
 })
 export class SharedModule { }

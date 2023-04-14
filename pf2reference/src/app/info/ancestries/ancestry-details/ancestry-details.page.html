@@ -293,6 +293,12 @@
             </ion-row>
             <p *ngIf="current_ancestry?.extras" class="ion-margin-start" [innerHtml]="current_ancestry?.extras"></p>
           </div>
+          <div *ngSwitchCase="'heritages'">
+            <p>You select a heritage at 1st level to reflect abilities passed down to you from your ancestors or common among those of your ancestry in the environment where you were born or grew up. You have only one heritage and can’t change it later. A heritage is not the same as a culture or ethnicity, though some cultures or ethnicities might have more or fewer members from a particular heritage. In additions to the heritages listed here, you may also choose from the list of <a [routerLink]="'/ancestries/heritages'"> Versatile Heritages</a></p>
+            <div *ngIf="current_ancestry?.id === 1">
+              <app-dwarf-heritages></app-dwarf-heritages>
+            </div>
+          </div>
 
         </div>
       </ion-col>
