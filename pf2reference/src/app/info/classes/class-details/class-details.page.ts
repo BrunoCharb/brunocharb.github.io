@@ -5,6 +5,7 @@ import {Progress_table} from '../../../models/progress_table';
 import {ClassServiceService} from '../../../services/class-service.service';
 import {Subclass} from '../../../models/subclass';
 import {Class_feat} from '../../../models/class_feat';
+import {FeatsService} from "../../../services/feats.service";
 
 @Component({
   selector: 'app-class-details',
@@ -25,7 +26,8 @@ export class ClassDetailsPage implements OnInit {
   search_term = ''
   feat_level = 0;
   constructor(private route: ActivatedRoute,
-              private classService: ClassServiceService) { }
+              private classService: ClassServiceService,
+              private featsService: FeatsService) { }
 
   async ionViewWillEnter(){
     await this.getClass();
@@ -86,26 +88,9 @@ export class ClassDetailsPage implements OnInit {
     }
   }
 
-  // public async getFeats(){
-  //   try {
-  //     const {data: feats, error} = await this.classService.getClassFeats(this.idClass());
-  //     if(feats){
-  //       this.class_feats = feats;
-  //       this.complete_class_feats = feats;
-  //       this.level_filtered_feats = feats;
-  //     }
-  //     else if(error){
-  //       console.log(error);
-  //     }
-  //   }
-  //   catch (error){
-  //     console.log(error);
-  //   }
-  // }
-
   public async getFeats(){
     try {
-      const {data: feats, error} = await this.classService.getFeatsWithTraits(this.current_class?.name);
+      const {data: feats, error} = await this.featsService.getFeatsWithTraits(this.current_class?.name);
       if(feats){
         this.class_feats = feats;
         this.complete_class_feats = feats;

@@ -300,6 +300,33 @@
             </div>
           </div>
 
+          <div *ngSwitchCase="'feats'">
+            <ion-row>
+              <div>
+                <ion-row class="ion-justify-content-center">
+                  <ion-select [(ngModel)]="feat_level" (ionChange)="filterByLevel()" class="select-style">
+                    <ion-select-option [value]="0">All feats</ion-select-option>
+                    <ion-select-option [value]="1">Level 1 feats</ion-select-option>
+                    <ion-select-option [value]="2">Level 2 feats</ion-select-option>
+                    <ion-select-option [value]="4">Level 4 feats</ion-select-option>
+                    <ion-select-option [value]="6">Level 6 feats</ion-select-option>
+                    <ion-select-option [value]="8">Level 8 feats</ion-select-option>
+                    <ion-select-option [value]="10">Level 10 feats</ion-select-option>
+                    <ion-select-option [value]="12">Level 12 feats</ion-select-option>
+                    <ion-select-option [value]="14">Level 14 feats</ion-select-option>
+                    <ion-select-option [value]="16">Level 16 feats</ion-select-option>
+                    <ion-select-option [value]="18">Level 18 feats</ion-select-option>
+                    <ion-select-option [value]="20">Level 20 feats</ion-select-option>
+                  </ion-select>
+                </ion-row>
+              </div>
+              <ion-searchbar (ionInput)="filterArray($event)" placeholder="Search... (traits, words)"></ion-searchbar>
+              <ion-col offset-lg="2" offset-md="2" size-lg="8" size-md="8" size-sm="12" size-xs="12" *ngFor="let feat of ancestry_feats">
+                <div><app-class-feat [feat]="feat"></app-class-feat></div>
+              </ion-col>
+            </ion-row>
+          </div>
+
         </div>
       </ion-col>
     </ion-row>
