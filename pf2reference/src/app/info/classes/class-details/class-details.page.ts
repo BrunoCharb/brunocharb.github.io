@@ -114,6 +114,7 @@ export class ClassDetailsPage implements OnInit {
     if (this.search_term.trim() !== '') {
       this.class_feats = this.level_filtered_feats.filter(feat =>
         feat.name.toLowerCase().includes(this.search_term.toLowerCase())
+        || this.chetkTraits(feat, this.search_term.toLowerCase())
       );
     }
     else{
@@ -130,5 +131,15 @@ export class ClassDetailsPage implements OnInit {
       this.level_filtered_feats = this.complete_class_feats.filter(feat => feat.level === this.feat_level);
       this.class_feats = this.level_filtered_feats;
     }
+  }
+
+  chetkTraits(feat: Class_feat, fragment: string): boolean{
+    let fragmentInTraits = false;
+    for (const trait of feat.traits){
+      if(trait.toLowerCase().includes(fragment)){
+        fragmentInTraits = true;
+      }
+    }
+    return fragmentInTraits;
   }
 }

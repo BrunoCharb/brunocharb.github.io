@@ -231,6 +231,7 @@ import {VanaraHeritagesComponent} from '../../info/ancestries/heritages/vanara-h
 import {
   VishkanyaHeritagesComponent
 } from '../../info/ancestries/heritages/vishkanya-heritages/vishkanya-heritages.component';
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [BomberComponent,
@@ -423,10 +424,11 @@ import {
   TenguHeritagesComponent,
   VanaraHeritagesComponent,
   VishkanyaHeritagesComponent],
-  imports: [
-    CommonModule,
-    IonicModule
-  ],
+    imports: [
+        CommonModule,
+        IonicModule,
+        RouterLink
+    ],
   exports: [BomberComponent,
     ChirurgeonComponent,
     MutagenistComponent,
