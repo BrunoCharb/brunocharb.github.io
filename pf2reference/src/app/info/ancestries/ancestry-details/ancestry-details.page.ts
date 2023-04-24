@@ -26,6 +26,7 @@ export class AncestryDetailsPage implements OnInit {
   async ionViewWillEnter(){
     await this.getAncestry();
     await this.getFeats();
+    console.log(this.ancestry_feats);
   }
 
   ngOnInit() {
@@ -78,7 +79,7 @@ export class AncestryDetailsPage implements OnInit {
 
   public async getFeats(){
     try {
-      const {data: feats, error} = await this.featsService.getFeatsWithTraits(this.current_ancestry?.name);
+      const {data: feats, error} = await this.featsService.getAncestryFeatsWithTraits(this.current_ancestry?.name);
       if(feats){
         this.ancestry_feats = feats;
         this.complete_ancestry_feats = feats;
