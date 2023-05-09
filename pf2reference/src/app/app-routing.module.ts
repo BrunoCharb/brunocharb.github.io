@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'heritage-details/:id',
     loadChildren: () => import('./info/ancestries/heritage-details/heritage-details.module').then( m => m.HeritageDetailsPageModule)
+  },
+  {
+    path: 'backgrounds',
+    loadChildren: () => import('./info/backgrounds/backgrounds/backgrounds.module').then( m => m.BackgroundsPageModule)
   }
 ];
 

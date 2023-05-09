@@ -1,0 +1,37 @@
+<ion-accordion-group expand="inset">
+  <ion-accordion value="background?.name">
+    <ion-item slot="header">
+      <ion-label>{{background?.name}}</ion-label>
+    </ion-item>    
+    <div slot="content">
+      <div class="ion-margin-horizontal">
+        <h2>{{background?.name}}</h2>
+        <div *ngIf="background?.rarity" class="badge-like">
+          {{background?.rarity}}
+        </div>
+        <p>{{background?.description}}</p>
+        <div *ngIf="background?.abilities">
+          <p>You get one ability boost in one of the following abilities</p>
+          <ul>
+            <li *ngFor="let ability of background?.abilities">{{ability}}</li>
+          </ul>
+          <p>You also get one free ability boost</p>
+        </div>
+        <div *ngIf="background?.skills">
+          <p>You're trained in the following skills</p>
+          <ul>
+            <li *ngFor="let skill of background?.skills">{{skill}}</li>
+          </ul>          
+        </div>
+        <div *ngIf="background?.skill_feats">
+          <p>You gain the following skill feat</p>
+          <ul>
+            <li *ngFor="let feat of background?.skill_feats">{{feat}}</li>
+          </ul>
+        </div>
+        <div *ngIf="background?.extra_info" [innerHTML]="background?.extra_info">
+        </div>
+      </div>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

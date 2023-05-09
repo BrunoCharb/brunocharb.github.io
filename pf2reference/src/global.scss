@@ -107,3 +107,9 @@ ion-menu-button {
   display: block;
   width: 100%;
 }
+
+ion-accordion {
+  .ion-accordion-toggle-icon {        
+    color: var(--ion-color-primary-contrast);
+  }
+}
