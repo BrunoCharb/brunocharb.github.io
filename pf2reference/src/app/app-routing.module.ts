@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'backgrounds',
     loadChildren: () => import('./info/backgrounds/backgrounds/backgrounds.module').then( m => m.BackgroundsPageModule)
+  },
+  {
+    path: 'skills',
+    loadChildren: () => import('./info/skills/skills-home/skills-home.module').then( m => m.SkillsHomePageModule)
+  },
+  {
+    path: 'skill-details/:skill',
+    loadChildren: () => import('./info/skills/skill-details/skill-details.module').then( m => m.SkillDetailsPageModule)
   }
 ];
 

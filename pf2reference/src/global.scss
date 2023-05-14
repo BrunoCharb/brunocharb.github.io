@@ -58,6 +58,20 @@ ion-menu-button {
   border-radius: 25px;
 }
 
+.small-header-btn{
+  background-color: #5E0000 !important;
+  color: var(--ion-background-color);
+  border-radius: 25px;
+  width: 75%;
+  text-align: center;
+  padding-left: 20px;
+  margin-top: 2em;
+}
+
+.small-header-btn:hover{
+  cursor: pointer;
+}
+
 .alert-wrapper{
   background-color: #5E0000 !important;
   color: var(--ion-background-color);

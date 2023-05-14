@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="light-text">Skills</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xl="10">
+        <ion-grid>
+          <ion-row>
+            <div>                          
+              <p>While your character’s ability scores represent their raw talent and potential, skills represent their training and experience at performing certain tasks. Each skill is keyed to one of your character’s ability scores and used for an array of related actions. Your character’s expertise in a skill comes from several sources, including their background and class.</p> 
+            </div>                        
+          </ion-row>
+          <ion-row>
+            <ion-col size-lg="4" size-md="6" size-sm="12" size-xs="12" *ngFor="let skill of lsSkills">
+              <ion-row class="small-header-btn" [routerLink]="['/skill-details', skill?.id]">                
+                <h2>{{skill.name}}</h2>                               
+              </ion-row>                             
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
