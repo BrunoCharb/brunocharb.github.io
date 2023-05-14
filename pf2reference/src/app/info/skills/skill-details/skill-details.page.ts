@@ -19,7 +19,8 @@ export class SkillDetailsPage implements OnInit {
 
   public async ionViewWillEnter(){
     await this.getSkill();
-    await this.getSkillActions();    
+    await this.getSkillActions();
+    console.log(this.skillActions);
   }
 
   ngOnInit() {
