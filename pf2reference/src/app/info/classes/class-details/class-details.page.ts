@@ -133,13 +133,12 @@ export class ClassDetailsPage implements OnInit {
     }
   }
 
-  chetkTraits(feat: Class_feat, fragment: string): boolean{
-    let fragmentInTraits = false;
+  chetkTraits(feat: Class_feat, fragment: string): boolean{    
     for (const trait of feat.traits){
       if(trait.toLowerCase().includes(fragment)){
-        fragmentInTraits = true;
+        return true;
       }
     }
-    return fragmentInTraits;
+    return false;
   }
 }
