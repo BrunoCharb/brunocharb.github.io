@@ -12,15 +12,18 @@ import { SkillsService } from 'src/app/services/skills.service';
 export class SkillDetailsPage implements OnInit {
 
   currentSkill: Skills | undefined;
-  skillActions: skill_actions[] = [];
+  untrainedSkillActions: skill_actions[] = [];
+  trainedSkillActions: skill_actions[] = [];
 
   constructor(private skillService: SkillsService,
               private route: ActivatedRoute) { }
 
   public async ionViewWillEnter(){
     await this.getSkill();
-    await this.getSkillActions();
-    console.log(this.skillActions);
+    await this.getUntrainedSkillActions();
+    console.log(this.untrainedSkillActions);
+    await this.getTrainedSkillActions();
+    console.log(this.trainedSkillActions);
   }
 
   ngOnInit() {
@@ -44,11 +47,26 @@ export class SkillDetailsPage implements OnInit {
     }
   }
 
-  public async getSkillActions(){
+  public async getUntrainedSkillActions(){
     try{
-      const {data: actions, error} = await this.skillService.getSkillActions(parseInt(this.idSkill(), 10))
+      const {data: actions, error} = await this.skillService.getUntrainedSkillActions(parseInt(this.idSkill(), 10))
       if (actions){
-        this.skillActions = actions;
+        this.untrainedSkillActions = actions;
+      }
+      else if (error){
+        console.log(error);
+      }
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
+  public async getTrainedSkillActions(){
+    try{
+      const {data: actions, error} = await this.skillService.getTrainedSkillActions(parseInt(this.idSkill(), 10))
+      if (actions){
+        this.trainedSkillActions = actions;
       }
       else if (error){
         console.log(error);

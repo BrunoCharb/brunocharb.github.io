@@ -19,7 +19,11 @@ export class SkillsService {
     return this.supaService.supabaseClient.from('skills').select('*').eq('id', id).single();
   }
 
-  public async getSkillActions(id: number): Promise<PostgrestResponse<skill_actions>>{
-    return this.supaService.supabaseClient.from('skill_actions').select('*').eq('related_skill', id);
+  public async getUntrainedSkillActions(id: number): Promise<PostgrestResponse<skill_actions>>{
+    return this.supaService.supabaseClient.from('skill_actions').select('*').match({related_skill: id, training_required: false});
+  }
+  
+  public async getTrainedSkillActions(id: number): Promise<PostgrestResponse<skill_actions>>{
+    return this.supaService.supabaseClient.from('skill_actions').select('*').match({related_skill: id, training_required: true});
   }
 }
