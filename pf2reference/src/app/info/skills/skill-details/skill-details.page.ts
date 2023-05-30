@@ -47,6 +47,7 @@ export class SkillDetailsPage implements OnInit {
     }
   }
 
+  // Goes in the component
   public async getUntrainedSkillActions(){
     try{
       const {data: actions, error} = await this.skillService.getUntrainedSkillActions(parseInt(this.idSkill(), 10))
