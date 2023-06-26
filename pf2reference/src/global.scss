@@ -113,6 +113,12 @@ ion-menu-button {
   font-weight: bolder;
 }
 
+.red-text-large{
+  color: var(--ion-color-primary) !important;
+  font-size: 14pt !important;
+  font-weight: bold !important;
+}
+
 .separator:after {
   margin-top: 0.2em;
   margin-left: -2em;
@@ -126,4 +132,14 @@ ion-accordion {
   .ion-accordion-toggle-icon {        
     color: var(--ion-color-primary-contrast);
   }
+}
+
+.no-bullets{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block{
+  display: block;
 }

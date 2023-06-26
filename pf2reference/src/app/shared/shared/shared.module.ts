@@ -232,6 +232,7 @@ import {
   VishkanyaHeritagesComponent
 } from '../../info/ancestries/heritages/vishkanya-heritages/vishkanya-heritages.component';
 import {RouterLink} from "@angular/router";
+import { GeneralSkillsComponent } from 'src/app/info/skills/components/general-skills/general-skills.component';
 
 @NgModule({
   declarations: [BomberComponent,

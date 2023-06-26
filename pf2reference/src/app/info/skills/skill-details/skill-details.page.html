@@ -6,3 +6,14 @@
     <ion-title class="light-text">{{currentSkill?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xl="10">
+        <div *ngIf="this.currentSkill?.id === 1"  >
+          <app-general-skills></app-general-skills>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>    
+</ion-content>

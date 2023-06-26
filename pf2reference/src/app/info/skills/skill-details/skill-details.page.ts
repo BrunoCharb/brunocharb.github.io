@@ -34,9 +34,9 @@ export class SkillDetailsPage implements OnInit {
   }
   public async getSkill(){
     try{
-      const {data: character_class, error} = await this.skillService.getSkill( parseInt(this.idSkill(), 10));
-      if(character_class){
-        this.currentSkill = character_class;
+      const {data: skill, error} = await this.skillService.getSkill( parseInt(this.idSkill(), 10));
+      if(skill){
+        this.currentSkill = skill;
       }
       else if (error){
         console.log(error.message);
